@@ -1,6 +1,6 @@
 # Reads QC Workflow (v1.0.2)
 
-![image](../../_static/images/1_RQC_rqc_workflow.png){.align-center}
+![image](../../_static/images/1_RQC_rqc_workflow.png)
 
 ## Workflow Overview
 
@@ -10,36 +10,26 @@ trimming, artifact removal, linker trimming, adapter trimming, and
 spike-in removal (using BBDuk), and performs human/cat/dog/mouse/microbe
 removal (using BBMap).
 
-The following parameters are used for \"rqcfilter2\" in this workflow::
-
-:   -   qtrim=r : Quality-trim from right ends before mapping.
-    -   trimq=0 : Trim quality threshold.
-    -   maxns=3 : Reads with more Ns than this will be discarded.
-    -   maq=3 : Reads with average quality (before trimming) below this
-        will be discarded.
-    -   minlen=51 : Reads shorter than this after trimming will be
-        discarded. Pairs will be discarded only if both are shorter.
-    -   mlf=0.33 : Reads shorter than this fraction of original length
-        after trimming will be discarded.
-    -   phix=true : Remove reads containing phiX kmers.
-    -   khist=true : Generate a kmer-frequency histogram of the output
-        data.
-    -   kapa=true : Remove and quantify kapa tag
-    -   trimpolyg=5 : Trim reads that start or end with a G polymer at
-        least this long
-    -   clumpify=true : Run clumpify; all deduplication flags require
-        this.
-    -   removehuman=true : Remove human reads via mapping.
-    -   removedog=true : Remove dog reads via mapping.
-    -   removecat=true : Remove cat reads via mapping.
-    -   removemouse=true : Remove mouse reads via mapping.
-    -   barcodefilter=false : Disable improper barcodes filter
-    -   chastityfilter=false: Remove illumina reads failing chastity
-        filter.
-    -   trimfragadapter=true: Trim all known Illumina adapter sequences,
-        including TruSeq and Nextera.
-    -   removemicrobes=true : Remove common contaminant microbial reads
-        via mapping, and place them in a separate file.
+***The following parameters are used for \"rqcfilter2\" in this workflow::*** 
+ - qtrim=r     :  Quality-trim from right ends before mapping.
+ - trimq=0     :  Trim quality threshold.
+ - maxns=3     :  Reads with more Ns than this will be discarded.
+ - maq=3       :  Reads with average quality (before trimming) below this will be discarded.
+ - minlen=51   :  Reads shorter than this after trimming will be discarded.  Pairs will be discarded only if both are shorter.
+ - mlf=0.33    :  Reads shorter than this fraction of original length after trimming will be discarded.
+ - phix=true   :  Remove reads containing phiX kmers.
+ - khist=true  :  Generate a kmer-frequency histogram of the output data.
+ - kapa=true   :  Remove and quantify kapa tag
+ - trimpolyg=5 :  Trim reads that start or end with a G polymer at least this long
+ - clumpify=true       :  Run clumpify; all deduplication flags require this.
+ - removehuman=true    :  Remove human reads via mapping.
+ - removedog=true      :  Remove dog reads via mapping.
+ - removecat=true      :  Remove cat reads via mapping.
+ - removemouse=true    :  Remove mouse reads via mapping.
+ - barcodefilter=false :  Disable improper barcodes filter
+ - chastityfilter=false:  Remove illumina reads failing chastity filter.
+ - trimfragadapter=true:  Trim all known Illumina adapter sequences, including TruSeq and Nextera.
+ - removemicrobes=true :  Remove common contaminant microbial reads via mapping, and place them in a separate file.
 
 ## Workflow Availability
 
@@ -95,15 +85,11 @@ The following commands will download the database:
     is \~5.7 GB. You can find input/output in the downloaded tar gz
     file.
 
-::: note
-::: title
 Note
-:::
 
 If the input data is paired-end data, it must be in interleaved format.
 The following command will interleave the files, using the above dataset
 as an example:
-:::
 
 ``` bash
 paste <(zcat SRR7877884_1.fastq.gz | paste - - - -) <(zcat SRR7877884_2.fastq.gz | paste - - - -) | tr '\t' '\n' | gzip -c > SRR7877884-int.fastq.gz
@@ -144,17 +130,14 @@ An example input JSON file is shown below:
 }
 ```
 
-::: note
-::: title
 Note
-:::
 
 In an HPC environment, parallel processing allows for processing
 multiple samples. The \"jgi_rqcfilter.input_files\" parameter is an
 array data structure. It can be used for multiple samples as input
 separated by a comma (,). Ex:
 \"jgi_rqcfilter.input_files\":\["first-int.fastq","second-int.fastq"\]
-:::
+:
 
 ## Output
 
@@ -190,98 +173,40 @@ An example output JSON file (filterStats.json) is shown below:
 Below is an example of all the output directory files with descriptions
 to the right.
 
-+----------------------------------+----------------------------------+
-| FileName                         | Description                      |
-+==================================+==================================+
-| SRR                              | > main output (clean data)       |
-| 7877884-int-0.1.anqdpht.fastq.gz |                                  |
-+----------------------------------+----------------------------------+
-| adaptersDetected.fa              | > adapters detected and removed  |
-+----------------------------------+----------------------------------+
-| bhist.txt                        | > base composition histogram by  |
-|                                  | > position                       |
-+----------------------------------+----------------------------------+
-| cardinality.txt                  | > estimation of the number of    |
-|                                  | > unique kmers                   |
-+----------------------------------+----------------------------------+
-| commonMicrobes.txt               | > detected common microbes       |
-+----------------------------------+----------------------------------+
-| file-list.txt                    | > output file list for           |
-|                                  | > rqcfilter2.sh                  |
-+----------------------------------+----------------------------------+
-| filterStats.txt                  | > summary statistics             |
-+----------------------------------+----------------------------------+
-| filterStats.json                 | > summary statistics in JSON     |
-|                                  | > format                         |
-+----------------------------------+----------------------------------+
-| filterStats2.txt                 | > more detailed summary          |
-|                                  | > statistics                     |
-+----------------------------------+----------------------------------+
-| gchist.txt                       | > GC content histogram           |
-+----------------------------------+----------------------------------+
-| human.fq.gz                      | > detected human sequence reads  |
-+----------------------------------+----------------------------------+
-| ihist_merge.txt                  | > insert size histogram          |
-+----------------------------------+----------------------------------+
-| khist.txt                        | > kmer-frequency histogram       |
-+----------------------------------+----------------------------------+
-| kmerStats1.txt                   | > synthetic molecule (phix,      |
-|                                  | > linker, lamda, pJET) filter    |
-|                                  | > run log                        |
-+----------------------------------+----------------------------------+
-| kmerStats2.txt                   | > synthetic molecule (short      |
-|                                  | > contamination) filter run log  |
-+----------------------------------+----------------------------------+
-| ktrim_kmerStats1.txt             | > detected adapters filter run   |
-|                                  | > log                            |
-+----------------------------------+----------------------------------+
-| ktrim_scaffoldStats1.txt         | > detected adapters filter       |
-|                                  | > statistics                     |
-+----------------------------------+----------------------------------+
-| microbes.fq.gz                   | > detected common microbes       |
-|                                  | > sequence reads                 |
-+----------------------------------+----------------------------------+
-| microbesUsed.txt                 | > common microbes list for       |
-|                                  | > detection                      |
-+----------------------------------+----------------------------------+
-| peaks.txt                        | > number of unique kmers in each |
-|                                  | > peak on the histogram          |
-+----------------------------------+----------------------------------+
-| phist.txt                        | > polymer length histogram       |
-+----------------------------------+----------------------------------+
-| refStats.txt                     | > human reads filter statistics  |
-+----------------------------------+----------------------------------+
-| reproduce.sh                     | > the shell script to reproduce  |
-|                                  | > the run                        |
-+----------------------------------+----------------------------------+
-| scaffoldStats1.txt               | > detected synthetic molecule    |
-|                                  | > (phix, linker, lamda, pJET)    |
-|                                  | > statistics                     |
-+----------------------------------+----------------------------------+
-| scaffoldStats2.txt               | > detected synthetic molecule    |
-|                                  | > (short contamination)          |
-|                                  | > statistics                     |
-+----------------------------------+----------------------------------+
-| scaffoldStatsSpikein.txt         | > detected skipe-in kapa tag     |
-|                                  | > statistics                     |
-+----------------------------------+----------------------------------+
-| sketch.txt                       | > mash type sketch scanned       |
-|                                  | > result against nt, refseq,     |
-|                                  | > silva database sketches.       |
-+----------------------------------+----------------------------------+
-| spikein.fq.gz                    | > detected skipe-in kapa tag     |
-|                                  | > sequence reads                 |
-+----------------------------------+----------------------------------+
-| status.log                       | > rqcfilter2.sh running log      |
-+----------------------------------+----------------------------------+
-| synth1.fq.gz                     | > detected synthetic molecule    |
-|                                  | > (phix, linker, lamda, pJET)    |
-|                                  | > sequence reads                 |
-+----------------------------------+----------------------------------+
-| synth2.fq.gz                     | > detected synthetic molecule    |
-|                                  | > (short contamination) sequence |
-|                                  | > reads                          |
-+----------------------------------+----------------------------------+
+
+| FileName                            | Description                                                                  |
+| ----------------------------------- | ---------------------------------------------------------------------------- |
+| SRR7877884-int-0.1.anqdpht.fastq.gz | main output (clean data)                                                     |
+| adaptersDetected.fa                 | adapters detected and removed                                                |
+| bhist.txt                           | base composition histogram by position                                       |
+| cardinality.txt                     | estimation of the number of unique kmers                                     |
+| commonMicrobes.txt                  | detected common microbes                                                     |
+| file-list.txt                       | output file list for rqcfilter2.sh                                           |
+| filterStats.txt                     | summary statistics                                                           |
+| filterStats.json                    | summary statistics in JSON format                                            |
+| filterStats2.txt                    | more detailed summary statistics                                             |
+| gchist.txt                          | GC content histogram                                                         |
+| human.fq.gz                         | detected human sequence reads                                                |
+| ihist_merge.txt                     | insert size histogram                                                        |
+| khist.txt                           | kmer-frequency histogram                                                     |
+| kmerStats1.txt                      | synthetic molecule (phix, linker, lamda, pJET) filter run log                |
+| kmerStats2.txt                      | synthetic molecule (short contamination) filter run log                      |
+| ktrim_kmerStats1.txt                | detected adapters filter run log                                             |
+| ktrim_scaffoldStats1.txt            | detected adapters filter statistics                                          |
+| microbes.fq.gz                      | detected common microbes sequence reads                                      |
+| microbesUsed.txt                    | common microbes list for detection                                           |
+| peaks.txt                           | number of unique kmers in each peak on the histogram                         |
+| phist.txt                           | polymer length histogram                                                     |
+| refStats.txt                        | human reads filter statistics                                                |
+| reproduce.sh                        | the shell script to reproduce the run                                        |
+| scaffoldStats1.txt                  | detected synthetic molecule (phix, linker, lamda, pJET) statistics           |
+| scaffoldStats2.txt                  | detected synthetic molecule (short contamination) statistics                 |
+| scaffoldStatsSpikein.txt            | detected skipe-in kapa tag statistics                                        |
+| sketch.txt                          | mash type sketch scanned result against nt, refseq, silva database sketches. |
+| spikein.fq.gz                       | detected skipe-in kapa tag sequence reads                                    |
+| status.log                          | rqcfilter2.sh running log                                                    |
+| synth1.fq.gz                        | detected synthetic molecule (phix, linker, lamda, pJET) sequence reads       |
+| synth2.fq.gz                        | detected synthetic molecule (short contamination) sequence reads             |
 
 ## Version History
 
