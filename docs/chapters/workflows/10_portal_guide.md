@@ -189,7 +189,7 @@ organic matter characterizations on the NMDC Data Portal.
 
 ### *Search by investigator name*
 
-[![alt_text](../_static/images/PI_search.png)](../_static/images/PI_search.png)
+[![alt_text](../../_static/images/PI_search.png)](../../_static/images/PI_search.png)
 
 NMDC-linked data can be filtered by the associated principal
 investigator by selecting 'PI Name' from the left query term bar. This
@@ -199,11 +199,11 @@ more information about that study and that principal investigator.
 
 ### *Search by omics processing information*
 
-[![alt_text](../_static/images/instrument_name.png)](../_static/images/instrument_name.png)
+[![alt_text](../../_static/images/instrument_name.png)](../../_static/images/instrument_name.png)
 
-[![omics_type](../_static/images/omics_type.png)](../_static/images/omics_type.png)
+[![omics_type](../../_static/images/omics_type.png)](../../_static/images/omics_type.png)
 
-[![processing_institution](../_static/images/processing_institution.png)](../_static/images/processing_institution.png)
+[![processing_institution](../../_static/images/processing_institution.png)](../../_static/images/processing_institution.png)
 
 Samples can be queried by various omics processing information terms
 including instrument name, omics type (processing runs sorted by omics
@@ -212,9 +212,9 @@ and processing institution.
 
 ### *Search by KEGG Orthology (KO)*
 
-[![KO_term](../_static/images/KO_term_search.png)](../_static/images/KO_term_search.png)
+[![KO_term](../../_static/images/KO_term_search.png)](../../_static/images/KO_term_search.png)
 
-[![KO_term2](../_static/images/KO_results.png)](../_static/images/KO_results.png)
+[![KO_term2](../../_static/images/KO_results.png)](../../_static/images/KO_results.png)
 
 Under 'Function' on the query term bar, users are able to search by KEGG
 Orthology (KO) terms to limit the query to samples with datasets that
@@ -225,15 +225,15 @@ all of the added terms.
 
 ### *Search by environmental descriptors*
 
-[![alt_text](../_static/images/depth.png)](../_static/images/depth.png)
+[![alt_text](../../_static/images/depth.png)](../../_static/images/depth.png)
 
-[![collection_date](../_static/images/date.png)](../_static/images/date.png)
+[![collection_date](../../_static/images/date.png)](../../_static/images/date.png)
 
-[![depth](../_static/images/latitude.png)](../_/static/images/latitude.png)
+[![depth](../../_static/images/latitude.png)](../../_/static/images/latitude.png)
 
-[![longitude](../_static/images/longitude.png)](../_static/images/longitude.png)
+[![longitude](../../_static/images/longitude.png)](../../_static/images/longitude.png)
 
-[![location_name](../_static/images/geographic_name.png)](../_static/images/geographic_name.png)
+[![location_name](../../_static/images/geographic_name.png)](../../_static/images/geographic_name.png)
 
 The query term bar also includes several environmental descriptor
 filtering fields of where the samples were isolated from. Users can
@@ -244,9 +244,9 @@ name.
 
 ### *Search by ecosystem classifications*
 
-[![gold_classification](../_static/images/gold_classification.png)](../_static/images/gold_classification.png)
+[![gold_classification](../../_static/images/gold_classification.png)](../../_static/images/gold_classification.png)
 
-[![envo](_static/images/envo.png)](_static/images/envo.png)
+[![envo](../../_static/images/envo.png)](../../_static/images/envo.png)
 
 Samples can also be queried by ecosystem classifications using GOLD
 and/or ENVO terms. Selecting GOLD classification in the query term bar
@@ -267,7 +267,7 @@ describe environments where samples were collected from.
 
 #### Barplot
 
-[![bar_plot](../_static/images/bar_plot.png)](../_static/images/bar_plot.png)
+[![bar_plot](../../_static/images/bar_plot.png)](../../_static/images/bar_plot.png)
 
 The barplot on the omics page displays the number of omics processing
 runs (not number of samples) for each data type available: organic
@@ -277,7 +277,7 @@ type.
 
 #### Geographic map
 
-[![geographic_map](../_static/images/geographic_map.png)](../_static/images/geographic_map.png)
+[![geographic_map](../../_static/images/geographic_map.png)](../../_static/images/geographic_map.png)
 
 The geographic map on the omics page allows for samples to be queried by
 the geographic location from which they were isolated. The map displays
@@ -290,7 +290,7 @@ button will limit the search to the current map bounds.
 
 #### Temporal slider
 
-[![temporal_slider](../_static/images/temporal_slider.png)](../_static/images/temporal_slider.png)
+[![temporal_slider](../../_static/images/temporal_slider.png)](../../_static/images/temporal_slider.png)
 
 Samples can also be queried by a sample collection date range by
 dragging the dots below the temporal slider on the omics page. Sample
@@ -298,7 +298,7 @@ collection dates are grouped by month.
 
 #### Upset plot
 
-[![upset_plot](../_static/images/upset_plot.png)](../_static/images/upset_plot.png)
+[![upset_plot](../../_static/images/upset_plot.png)](../../_static/images/upset_plot.png)
 
 The upset plot on the omics page displays the number of samples that
 have various combinations of associated omics data. The axis at the top
@@ -314,7 +314,7 @@ update as query terms are added.
 
 #### Sankey diagram
 
-[![sankey_diagram](../_static/images/sankey_diagram.png)](../_static/images/sankey_diagram.png)
+[![sankey_diagram](../../_static/images/sankey_diagram.png)](../../_static/images/sankey_diagram.png)
 
 On the environment page, the Sankey diagram displays the environments
 that NMDC-linked samples were isolated from. This visualization is based
@@ -327,7 +327,7 @@ came from that selected environment.
 
 ### *Individual file*
 
-[![individual_download](../_static/images/download_individual_file.png)](../_static/images/download_individual_file.png)
+[![individual_download](../../_static/images/download_individual_file.png)](../../_static/images/download_individual_file.png)
 
 Various output data files are available from samples findable through
 the NMDC that have been run through the NMDC standardized workflows.
@@ -338,7 +338,7 @@ must log in with an ORCID account before downloading data.
 
 ### *Bulk download*
 
-[![bulk_download](../_static/images/bulk_download.png)](../_static/images/bulk_download.png)
+[![bulk_download](../../_static/images/bulk_download.png)](../../_static/images/bulk_download.png)
 
 In addition to the ability to download single output files from samples
 run through the NMDC standardized workflows, the NMDC portal allows
