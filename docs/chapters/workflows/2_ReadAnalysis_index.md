@@ -1,6 +1,6 @@
 # The Read-based Taxonomy Classification (v1.0.1)
 
-![image](../../_static/images/2_ReadAnalysis_readbased_analysis_workflow.png){.align-center}
+![image](../../_static/images/2_ReadAnalysis_readbased_analysis_workflow.png)
 
 ## Workflow Overview
 
@@ -140,18 +140,18 @@ results, a tabular report, and a Krona plot (html).:
 Below is an example of the output directory files with descriptions to
 the right.
 
-  FileName                                   Description
-  ------------------------------------------ ------------------------------------------------
-  SRR7877884.json                            ReadbasedAnalysis result JSON file
-  centrifuge/SRR7877884.classification.tsv   Centrifuge output read classification TSV file
-  centrifuge/SRR7877884.report.tsv           Centrifuge output report TSV file
-  centrifuge/SRR7877884.krona.html           Centrifuge krona plot HTML file
-  gottcha2/SRR7877884.full.tsv               GOTTCHA2 detail output TSV file
-  gottcha2/SRR7877884.tsv                    GOTTCHA2 output report TSV file
-  gottcha2/SRR7877884.krona.html             GOTTCHA2 krona plot HTML file
-  kraken2/SRR7877884.classification.tsv      Kraken2 output read classification TSV file
-  kraken2/SRR7877884.report.tsv              Kraken2 output report TSV file
-  kraken2/SRR7877884.krona.html              Kraken2 krona plot HTML file
+| FileName                                 | Description                                    |
+| ---------------------------------------- | ---------------------------------------------- |
+| SRR7877884.json                          | ReadbasedAnalysis result JSON file             |
+| centrifuge/SRR7877884.classification.tsv | Centrifuge output read classification TSV file |
+| centrifuge/SRR7877884.report.tsv         | Centrifuge output report TSV file              |
+| centrifuge/SRR7877884.krona.html         | Centrifuge krona plot HTML file                |
+| gottcha2/SRR7877884.full.tsv             | GOTTCHA2 detail output TSV file                |
+| gottcha2/SRR7877884.tsv                  | GOTTCHA2 output report TSV file                |
+| gottcha2/SRR7877884.krona.html           | GOTTCHA2 krona plot HTML file                  |
+| kraken2/SRR7877884.classification.tsv    | Kraken2 output read classification TSV file    |
+| kraken2/SRR7877884.report.tsv            | Kraken2 output report TSV file                 |
+| kraken2/SRR7877884.krona.html            | Kraken2 krona plot HTML file                   |
 
 ## Version History
 
