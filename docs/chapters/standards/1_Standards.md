@@ -1,4 +1,371 @@
-# MIxS Soil Package
+# The NMDC Metadata Standards Documentation
+
+## Introduction
+
+This documentation provides details on the National Microbiome Data
+Collaborative's ([NMDC](http://microbiomedata.org)) approach to sample
+and data processing metadata. These are key features that drive the data
+search and discovery aspect of the NMDC data portal
+(<https://microbiomedata.org/data/>). If you are unfamiliar with these
+types of metadata (Figure 1), we recommend you begin with an
+*Introduction to Metadata and Ontologies: Everything You Always Wanted
+to Know About Metadata and Ontologies (But Were Afraid to Ask)*
+(<https://doi.org/10.25979/1607365>).
+
+::: container
+    <img src="../../images/NMDC_metadata_img1.png" style="width:80%"/>
+:::
+
+Figure 1: Microbiome metadata types: Information that contextualizes
+sample including its geographic location and collection date, sample
+preparation, data processing methods, and data products produced from a
+biological sample (Luke et al., 2020. Introduction to Metadata and
+Ontologies: Everything You Always Wanted to Know About Metadata and
+Ontologies (But Were Afraid to Ask). DOI: 10.25979/1607365).
+
+All data integrated into the NMDC data portal must adhere to existing
+metadata standards for proper indexing and display, and to ensure
+accurate search results are returned. This documentation outlines the
+standards and ontologies that were included in the NMDC data schema, a
+framework that defines how data were defined and linked. For the
+2019-2022 pilot initiative, the NMDC Metadata Standards Team (see the
+[NMDC Team page](https://microbiomedata.org/team/)) leveraged existing
+community-driven standards developed by the [Genomics Standards
+Consortium](https://gensc.org/) (GSC), the Joint Genome Institute (JGI)
+[Genomes Online Database](https://gold.jgi.doe.gov/) (GOLD), and OBO
+Foundry's [Environmental
+Ontology](http://www.obofoundry.org/ontology/envo.html) (EnvO). In
+collaboration with these organizations, the NMDC has created a framework
+for mapping these standards into an interoperable framework that can be
+expanded to include additional standards and ontologies in the future.
+
+Additional information on the activities by the NMDC Metadata Standards
+team can be found on the NMDC website at:
+<https://microbiomedata.org/metadata/>
+
+## Standards and Ontologies used by the NMDC
+
+### Sample Metadata
+
+#### GSC Minimum Information about any (x) Sequence (MIxS)
+
+The GSC has developed standards for describing genomic and metagenomic
+sequences, including the "minimum information about a genome sequence"
+([MIGS](https://pubmed.ncbi.nlm.nih.gov/18464787/)), the "minimum
+information about a metagenome sequence"
+([MIMS](https://pubmed.ncbi.nlm.nih.gov/18464787/)), and the "minimum
+information about a marker gene sequence"
+([MIMARKS](https://pubmed.ncbi.nlm.nih.gov/21552244/)). To complement
+this community-driven standard effort, the GSC has also developed a
+system for describing the environment from which a biological sample
+originates, as "environmental packages" and established a unified
+standard set of checklists through the minimum information about any (x)
+sequence (MIxS). MIxS provides a standardized data dictionary of sample
+descriptors (e.g., location, environment, elevation, altitude, depth,
+etc.) organized into different packages for 17 different sample
+environments.
+
+To standardize how physical samples are described (i.e., sample
+metadata, Figure 1), the NMDC schema includes environmental descriptors
+from the GSC MIxS standards.
+
+*Explore how to create a MIxS-compliant sample metadata spreadsheet*
+
+-   Review our example spreadsheet with sample metadata that has been
+    converted to be compliant with the MIxS Soil environment package.
+    Note that not all non-mandatory terms from the MIxs Soil package
+    were relevant for these example samples, and hence were omitted for
+    clarity.
+    -   [Basic sample
+        spreadsheet](https://docs.google.com/spreadsheets/d/1i2w2CEEHiMJZesi984LyU-ayaHKNFOCCN0TcPmKFda0/edit?usp=sharing)
+        (Tab 1 - before conversion to MIxS)
+    -   [MIxS-compliant soil
+        spreadsheet](https://docs.google.com/spreadsheets/d/1i2w2CEEHiMJZesi984LyU-ayaHKNFOCCN0TcPmKFda0/edit?usp=sharing)
+        (Tab 2 - converted to MIxS Soil)
+-   Explore the mandatory, unique, and shared descriptors from the [MIxS
+    Soil
+    package](https://docs.google.com/document/d/1oNlMNQySuCoEeqhf1Qou8D-BV5bE76TkjrJLya8Ehw4/edit)
+-   Searchable descriptors from **all** MIxS environmental packages
+    *-coming soon!*
+-   Learn more about all of the [17 MIxS environmental
+    packages](https://gensc.org/mixs)
+
+#### Genomes Online Database (GOLD)
+
+The JGI [Genomes OnLine Database](https://gold.jgi.doe.gov/) (GOLD,
+[Mukherjee 2021](https://pubmed.ncbi.nlm.nih.gov/33152092/)) is an
+open-access repository of genome, metagenome, and metatranscriptome
+sequencing projects with their associated metadata. GOLD data are
+organized based on Study, Biosample/Organism, Sequencing Project and
+Analysis Project ([Mukherjee
+2017](https://pubmed.ncbi.nlm.nih.gov/30357420/)). Biosamples (defined
+as the physical material collected from an environment) are described
+using a five-level ecosystem classification [path (Figure
+2)](https://pubmed.ncbi.nlm.nih.gov/20653767/); the NMDC schema also
+uses this ecosystem classification to describe sample environments.
+
+::: container
+:::
+
+Figure 2. The GOLD five-level ecosystem classification paths ([Mukherjee
+2019](https://pubmed.ncbi.nlm.nih.gov/33152092/)).
+
+*Overview of the GOLD ecosystem paths*
+
+-   **Ecosystem** describes biosamples using three different broadest
+    contexts, namely environmental, engineered, and host-associated.
+-   **Ecosystem category** subdivides the ecosystem into categories,
+    such as aquatic or terrestrial.
+-   **Ecosystem type** classifies those categories into types, such as
+    freshwater or marine, cave, desert, soil, etc.
+-   **Ecosystem subtype** allows for additional environmental context or
+    boundaries.
+-   **Specific ecosystem** that describes the environment that directly
+    influences the sample or the environmental material itself.
+
+*Explore how to map sample environments using the GOLD ecosystem
+classification*
+
+-   Learn more about the GOLD ecosystem paths using an [interactive
+    visualization tool](https://gold.jgi.doe.gov/ecosystemtree).
+-   Review a
+    [step-by-step](https://drive.google.com/file/d/1h-FVY26G_Q_OazkZrYmlTg4QhQUZTRFY/view?usp=sharing)
+    example of how to assign the GOLD ecosystem classification to a lake
+    sediment sample.
+
+#### Environmental Ontology (EnvO)
+
+The Environment Ontology (EnvO, [Buttigieg
+2016](https://pubmed.ncbi.nlm.nih.gov/27664130/)) is a community-led
+ontology that represents environmental entities such as biomes,
+environmental features, and environmental materials. Each EnvO term is
+identified using a unique *resource identifier* (e.g.,
+[CURIE](https://en.wikipedia.org/wiki/CURIE) or
+[IRI](https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier))
+that resolves in a web browser. This ensures that EnvO's terms (and
+their definitions) are easy to find, reference, and share amongst
+collaborators. It also ensures that datasets described using EnvO terms
+can be more easily integrated and analyzed in a reproducible manner. And
+since the meanings of the terms are precisely defined and accessible,
+humans and computers can easily connect EnvO terms across datasets.
+
+EnvO terms are the recommended values for several of the mandatory terms
+in the MIxS packages, often referred to as the "MIxS triad".
+
+-   **MIxS: env_broad_scale** (a.k.a. Biome): The major environmental
+    system that the sample or specimen came from. Often, the value for
+    this term comes from EnvO's
+    [biome](http://www.ontobee.org/ontology/ENVO?iri=http://purl.obolibrary.org/obo/ENVO_00000428)
+    hierarchy, and is similar to GOLD's *Ecosystem category.*
+    -   Examples: forest biome, tropical biome, and oceanic pelagic zone
+        biome
+-   **MIxS: env_local_scale** (a.k.a. Feature): A more direct expression
+    of the sample or specimen's local vicinity, which likely has a
+    significant influence on the sample or specimen. Possible values are
+    listed in EnvO's [astronomical body
+    part](http://www.ontobee.org/ontology/ENVO?iri=http://purl.obolibrary.org/obo/ENVO_01000813)
+    hierarchy, which is similar to GOLD's *Ecosystem type/subtype.*
+    -   Examples: mountain, pond, whale fall, and karst
+-   **MIxS: env_medium** (a.k.a. material): The environmental
+    material(s) immediately surrounding your sample or specimen prior to
+    sampling. Examples of this are found in EnvO's [environmental
+    material](http://www.ontobee.org/ontology/ENVO?iri=http://purl.obolibrary.org/obo/ENVO_00010483)
+    hierarchy, and is similar to GOLD's *Specific ecosystem.*
+    -   Examples: sediment, soil, water, and air
+
+*Explore how to map sample environments using the EnvO ecosystem
+classification*
+
+Review a step-by-step example of how to assign EnvO terms to an
+oligotrophic lake sediment sample below.
+
+```{=html}
+<table>
+```
+```{=html}
+<tbody>
+```
+```{=html}
+<tr class="odd">
+```
+```{=html}
+<td width="35%" valign="top">
+```
+```{=html}
+<p>
+```
+env_broad_scale (Biome)
+
+```{=html}
+</p>
+```
+```{=html}
+<p>
+```
+Using EnvO biome categories, aquatic is appropriate. However, since the
+EnvO is a hierarchical system, the aquatic biome has two sub-categories:
+freshwater and marine biomes. The freshwater biome is further divided
+into freshwater lake biome and freshwater river biome. Therefore, for a
+lake sediment sample, freshwater lake biome is the appropriate EnvO
+biome category.
+
+```{=html}
+</p>
+```
+```{=html}
+</td>
+```
+```{=html}
+<td>
+```
+```{=html}
+</td>
+```
+```{=html}
+</tr>
+```
+```{=html}
+<tr class="even">
+```
+```{=html}
+<td valign="top">
+```
+```{=html}
+<p>
+```
+env_local_scale (Feature)
+
+```{=html}
+</p>
+```
+```{=html}
+<p>
+```
+Next, we describe the local environmental feature in the vicinity of and
+likely having a strong causal influence on the sample. Using the EnvO
+astronomical body part categories, we step through the relevant
+categories (see figure on the right) until we reach the EnvO term
+oligotrophic lake.
+
+```{=html}
+</p>
+```
+```{=html}
+</td>
+```
+```{=html}
+<td>
+```
+```{=html}
+</td>
+```
+```{=html}
+</tr>
+```
+```{=html}
+<tr class="odd">
+```
+```{=html}
+<td valign="top">
+```
+```{=html}
+<p>
+```
+env_medium (Material)
+
+```{=html}
+</p>
+```
+```{=html}
+<p>
+```
+Finally, since the sample is oligotrophic lake sediment, the EnvO
+environmental material could be assigned sediment. But because the EnvO
+hierarchy provides sub-categories within sediment, the environmenta
+material will be assigned lake sediment.
+
+```{=html}
+</p>
+```
+```{=html}
+</td>
+```
+```{=html}
+<td>
+```
+```{=html}
+</td>
+```
+```{=html}
+</tr>
+```
+```{=html}
+</tbody>
+```
+```{=html}
+</table>
+```
+Therefore, the EnvO triad for *oligotrophic lake sediment* is:
+
+> **Env_broad_scale**: freshwater lake biome \[ENVO_01000252\]
+>
+> **Env_local_scale**: oligotrophic lake \[ENVO_01000774\]
+>
+> **Env_medium**: lake sediment \[ENVO_00000546\]
+
+#### Classifying samples with GOLD and MIxS/EnvO
+
+The five-level GOLD ecosystem classification path and EnvO triad each
+have unique advantages in describing the environmental context of a
+biosample. The NMDC leverages the strengths of both the GOLD ecosystem
+classification path and MIxS/EnvO triad. The assignment of MIxS/EnvO
+triad for the biosamples currently in the NMDC data portal was achieved
+through a manual curation process using various metadata fields of GOLD
+biosamples fields, such as name, description, habitat, sample collection
+site, identifier, ecosystem classification path, and study description.
+The NMDC team is currently working on exploring solutions for automated
+mapping between GOLD and MIxS/EnvO.
+
+::: container
+    <img src="../../images/NMDC_metadata_img6.png" style="width:80%" />
+:::
+
+Figure 3: Mapping between the MIxS/EnvO triad and the GOLD ecosystem
+classification enables integration of sample environments defined with
+GOLD and MIxS/EnvO.
+
+## Data Processing Metadata
+
+In addition, the NMDC is adopting the MIxS standards for sequence data
+types (e.g., sequencing method, pcr primers and conditions, etc.), and
+are building on previous efforts by the [Proteomics Standards
+Initiative](http://www.psidev.info/groups/mass-spectrometry) and
+[Metabolomics Standards
+Initiative](https://github.com/MSI-Metabolomics-Standards-Initiative/CIMR)
+to develop standards and controlled vocabularies for mass spectrometry
+data types (e.g., ionization mode, mass resolution, scan rate, etc.).
+*Additional details on the processing metadata are coming soon.*
+
+## Overview of the NMDC Data Schema
+
+The NMDC has developed a normalized metadata
+[schema](https://github.com/microbiomedata/nmdc-metadata) (available in
+the NMDC GitHub) for representing studies, samples, relationships
+between samples, and associated data objects. The schema is organized
+into object classes, which act as nodes. Each class has associated
+slots, which are fields that contain metadata that describe the object.
+For more in-depth information, full documentation of the NMDC schema can
+be found
+[here](https://microbiomedata.github.io/nmdc-metadata/#classes).
+
+For the NMDC pilot, a python
+[toolkit](https://github.com/microbiomedata/nmdc-metadata) for
+generating NMDC-compliant JavaScript Object Notation (JSON) objects was
+developed to create ETL (Extract-Transform-Load) software to ingest
+metadata from the DOE User Facilities. Read more about the data in the
+NMDC pilot [here](https://microbiomedata.org/data/).
+
+## MIxS Soil Package
 
 The MIxS Soil Package contains a list of 145 descriptors to describe the
 soil sample taken from various environments including soil from,
@@ -16,7 +383,7 @@ terms:
 
 <https://www.ncbi.nlm.nih.gov/biosample/SAMN08902834>
 
-## **Mandatory descriptors of MIxS Soil packages are:**
+### **Mandatory descriptors of MIxS Soil packages are:**
 
 The MIxS soil package has 12 mandatory descriptors including **'depth'**
 and **'elevation'**. These 12 mandatory descriptors with descriptor
@@ -266,7 +633,7 @@ when available are listed below.
       Genetic AnalyzerAB 3130 Genetic AnalyzerBGISEQ-500\]
     | Example : Illumina HiSeq 1500
 
-## **Unique descriptors (46) in MIxS Soil package**
+### **Unique descriptors (46) in MIxS Soil package**
 
 The MIxS Soil package has 46 unique descriptors when compared with other
 MIxS packages. Name, definition, section of the MIxS package, expected
@@ -584,7 +951,7 @@ example value when available are listed below.
     | Expected value : PMID,DOI or url
     | Value syntax : {PMID}{URL}
 
-## **Other descriptors (non mandatory and non-unique descriptors) from MIxS Soil package**
+### **Other descriptors (non mandatory and non-unique descriptors) from MIxS Soil package**
 
 The MIxS Soil package has 89 descriptors that can also be found/used in
 other MIxS environmental packages. Name, definition, section of the MIxS
@@ -1675,3 +2042,385 @@ preferred unit and example value when available are listed below.
     Value syntax : {text}
 
     Example : qiagen repli-g
+
+## Identifiers in NMDC
+
+Identifiers are crucial for the NMDC, both for any data objects
+*created* (aka minted) and for any external objects *referenced*
+
+Examples of entities that require identifiers:
+
+-   Samples
+-   Data objects (e.g. sequence files)
+-   Taxa (e.g. NCBITaxon or GTDB)
+-   Genes, Proteins
+-   Sequences (e.g. genome/transcriptome)
+-   Ontology terms and other descriptors
+    -   functional orthologs, e.g. KEGG.orthology (KO) terms
+    -   pathways, e.g. KEGG.pathway, MetaCyc, GO
+    -   reactions/activities: KEGG, MetaCyc
+    -   chemical entities: CHEBI, CHEMBL, INCHI, ...
+    -   sequence feature types: SO, Rfam
+
+Identifiers should be:
+
+-   Permanent
+-   Unique
+-   Resolvable
+-   Opaque
+
+See [McMurry et al,
+PMID:28662064](https://www.ncbi.nlm.nih.gov/pubmed/28662064) for more
+desiderata.
+
+### CURIEs - prefixed IDs
+
+Following McMurry et al we adopt the use of *prefixed identifiers*
+
+The syntax is:
+
+    Prefix:LocalId
+
+Examples:
+
+-   <GO:0008152>
+-   BIOSAMPLE:SAMEA2397676
+-   <DOI:10.1038/nbt1156>
+
+These prefixed identifiers are also known as CURIEs (Compact URIs).
+There is a [W3C specification](https://www.w3.org/TR/curie) for these
+
+All prefixes should be registered with a standard identifier prefix
+system. These include:
+
+-   <http://n2t.net>
+-   <http://identifiers.org>
+-   <http://obofoundry.org>
+
+### Examples
+
+#### INSDC BioSamples
+
+Registry entry: <https://registry.identifiers.org/registry/biosample>
+
+Example ID/CURIE: BIOSAMPLE:SAMEA2397676
+
+Resolving via identifiers.org:
+<https://identifiers.org/BIOSAMPLE:SAMEA2397676>
+
+Resolving via nt2.net: <http://n2t.net/BIOSAMPLE:SAMEA2397676>
+
+#### GOLD identifiers
+
+<https://registry.identifiers.org/registry/gold>
+
+Example ID: `GOLD:Gp0119849`
+
+Resolving via identifiers.org: <https://identifiers.org/GOLD:Gp0119849>
+
+#### identifiers for ontology terms and function descriptors
+
+Most of the ontologies we use are in OBO. All OBO IDs are prefixed using
+the ontology ID space. The list of ID spaces can be found on
+<http://obofoundry.org>
+
+For example the ID/CURIE `ENVO:00002007` represents the class `sediment`
+and is expanded to a URI of
+<http://purl.obolibrary.org/obo/ENVO_00002007>
+
+### KEGG
+
+KEGG is actually a set of databases, each with its own prefix, usually
+of form `KEGG.$database`, e.g.
+
+-   [KEGG.ORTHOLOGY](https://registry.identifiers.org/registry/kegg.orthology)
+    (aka KO), e.g. KEGG.ORTHOLOGY:K00001
+-   [KEGG.COMPOUND](https://registry.identifiers.org/registry/kegg.compound),
+    e.g. KEGG.COMPOUND:C12345
+
+### Recommended IDs for use within NMDC
+
+The NMDC schema is annotated with the set of IDs that are allowed to act
+as primary keys for instances of each class.
+
+For example the class
+[OrthologyGroup](https://microbiomedata.github.io/nmdc-metadata/docs/OrthologyGroup)
+has a description of the IDs allowed on the class web page, the first
+listed is
+[KEGG.ORTHOLOGY](https://registry.identifiers.org/registry/kegg.orthology)
+
+The underlying yaml looks like this:
+
+    orthology group:
+      is_a: functional annotation term
+      description: >-
+        A set of genes or gene products in which all members are orthologous
+      id_prefixes:
+        - KEGG.ORTHOLOGY  ## KO number
+        - EGGNOG
+        - PFAM
+        - TIGRFAM
+        - SUPFAM
+        - PANTHER.FAMILY
+      exact_mappings:
+        - biolink:GeneFamily
+
+The full URLs for each is in the jsonld context file
+
+### IDs minted for use within NMDC
+
+Note that NMDC schema mandates IDs for most objects. These always have
+the field name
+[id](https://microbiomedata.github.io/nmdc-metadata/docs/id)
+
+### Reuse vs minting new IDs
+
+We try to reuse IDs as far as possible. For example, for any sample
+already in GOLD, we use the GOLD sample identifier, e.g. GOLD:Gb.....
+
+### IDs generated during workflows
+
+This section is in progress. See
+<https://github.com/microbiomedata/nmdc-metadata/issues/195>
+
+All instances of
+[OmicsProcessing](https://microbiomedata.github.io/nmdc-metadata/docs/OmicsProcessing)
+have IDs. The policy for ID depends on the provider.
+
+Currently metagenomics omics objects look like this:
+
+``` yaml
+id: "gold:Gp0108335"
+name: "Thawing permafrost microbial communities from the Arctic, studying carbon transformations - Permafrost 712P3D"
+has_input: 
+  - "gold:Gb0108335"
+part_of: 
+  - "gold:Gs0112340"
+has_output: 
+  - "jgi:551a20d30d878525404e90d5"
+omics_type: Metagenome
+type: "nmdc:OmicsProcessing"
+add_date: "30-OCT-14 12.00.00.000000000 AM"
+mod_date: "22-MAY-20 06.13.12.927000000 PM"
+ncbi_project_name: "Thawing permafrost microbial communities from the Arctic, studying carbon transformations - Permafrost 712P3D"
+processing_institution: "Joint Genome Institute"
+principal_investigator_name: "Virginia Rich"
+```
+
+note that we use re-using the GOLD ID rather than minting a new one
+
+the linked data object uses a jgi prefix and an md5 hash
+
+``` yaml
+id: "jgi:551a20d30d878525404e90d5"
+name: "8871.1.114459.GCCAAT.fastq.gz"
+description: "Raw sequencer read data"
+file_size_bytes: 17586370657
+type: "nmdc:DataObject"
+```
+
+note that currently jgi is not registered and thus the ID is not
+resolvable
+
+Currently metaproteomics omics objects look like this:
+
+``` yaml
+id: "emsl:404590"
+name: "FECB_21_5093B_01_23Dec14_Tiger_14-11-12"
+description: "High res MS with low res CID MSn"
+part_of: 
+  - "gold:Gs0110132"
+has_output: 
+  - "emsl:output_404590"
+omics_type: Proteomics
+type: "nmdc:OmicsProcessing"
+instrument_name: "VOrbiETD03"
+processing_institution: "Environmental Molecular Sciences Lab"
+```
+
+this is suboptimal; `emsl` is not yet registered, and it's not clear
+that the integer is unique within emsl, let alone the nmdc subset
+
+the output data objects are formed from these:
+
+``` yaml
+id: "emsl:output_404590"
+name: "output: FECB_21_5093B_01_23Dec14_Tiger_14-11-12"
+description: "High res MS with low res CID MSn"
+file_size_bytes: 503296678
+type: "nmdc:DataObject"
+```
+
+the data objects use hashes (md5) prefixed with nmdc:
+
+``` yaml
+name: "404590_resultant.tsv"
+description: "Aggregation of analysis tools{MSGFplus, MASIC} results"
+file_size_bytes: 10948480
+type: "nmdc:DataObject"
+id: "nmdc:e0c70280a7a23c7c5cc1e589f72e896e"
+```
+
+note nmdc is not yet registered
+
+Both metaG and metaT analyses produce GFF3 files. See [issue
+184](https://github.com/microbiomedata/nmdc-metadata/issues/184) for
+more on how the GFF is modeled.
+
+The main entity we care about in these is the \[gene product\]
+<https://microbiomedata.github.io/nmdc-metadata/docs/GeneProduct>) ID
+(usually a protein), this is what functional annotation hangs off.
+
+This is typically a protein encoded by a CDS, e.g.
+
+    Ga0185794_41    GeneMark.hmm-2 v1.05    CDS     48      1037    56.13   +       0       ID=Ga0185794_41_48_1037;translation_table=11;start_type=ATG;product=5-methylthioadenosine/S-adenosylhomocysteine deaminase;product_source=KO:K12960;cath_funfam=3.20.20.140;cog=COG0402;ko=KO:K12960;ec_number=EC:3.5.4.28,EC:3.5.4.31;pfam=PF01979;superfamily=51338,51556
+
+Currently we are prefixing the ID field in GFF with `nmdc`,
+e.g. `nmdc:Ga0185794_41_48_1037` as the protein ID
+
+When converting col9 we ensure that each ID is correctly prefixed. So
+for example, we use `KEGG.OTHOLOGY:K12960` not `KO:K12960` as the former
+is the official prefix according to KEGG and identifiers.org
+
+We will also later need a policy for IDs for the sequences in col1 (ie
+genome or transcript), please return later for more details...
+
+### MIxS term identifiers
+
+We are working with the GSC to provide permanent IDs for MIxS terms.
+Note these terms are schema-level rather than data-level.
+
+Please check this section later
+
+For now we place these in the nmdc namespaces, e.g
+
+`nmdc:alt`
+
+### Identifier mapping
+
+Please check this section later
+
+### Identifiers and semantic web URIs
+
+We produce a JSON-LD context with the schema:
+
+-   [jsonschema/nmdc.context.jsonld](jsonschema/nmdc.context.jsonld)
+
+When this is combined with schema-conformant JSON, RDF can be
+automatically created using the intended URIs
+
+## Validating json objects against the NMDC schema
+
+This document assumes knowledge of
+[JSON](https://www.json.org/json-en.html). It also assumes rudimentary
+familiarity with [JSON-Schema](https://json-schema.org/) but don't worry
+if you are not an expert on this.
+
+We can conceive of validation of a piece of JSON at two levels
+
+1.  The JSON should be syntactically correct JSON
+2.  The JSON should conform to the NMDC schema
+
+### Syntactically correct JSON
+
+It is crucial that the JSON is syntactically valid, otherwise it can't
+even be schema-validated.
+
+There are a variety of ways to check for this. We recommend using
+jsonschema to validate this, see below.
+
+NOTE: all NMDC JSON-producing tools, libraries, or scripts SHOULD use a
+standard json library. If you are using a robust standard json library,
+your output is practically guaranteed to be syntactically valid JSON.
+
+It is strongly recommended that you do NOT generate JSON by methods such
+as directly manipulating json strings or printing directly. This is
+guaranteed to be fragile/non-robust. Even if your code works now, it is
+certain it will fail later and produce incorrect JSON.
+
+For Python, there is only one choice:
+
+<https://docs.python.org/3/library/json.html>
+
+If you are not using this, you should
+
+### Schema validation
+
+The JSON-Schema for NMDC is maintained in this github repo, under
+[jsonschema/nmdc.schema.json](../../jsonschema/nmdc.schema.json)
+
+Note that the JSON-Schema is generated from a higher level YAML
+representation, using a modeling framework called linkML. See the README
+for details. For understanding the schema, you may be better looking at
+the auto-generated docs. However, for computational conformance, the
+JSON-Schema is what is should be used.
+
+There are a variety of json schema validators, these will give the same
+results. There are web playgrounds for this. But for simplicity we
+recommend the Python [jsonschema
+package](https://pypi.org/project/jsonschema/)
+
+To install:
+
+``` bash
+pip install jsonschema
+```
+
+Assume you have a file MYFILE that is json intended to conform
+
+``` bash
+jsonschema -i /PATH/TO/MYFILE.json jsonschema/nmdc.schema.json
+```
+
+If the json is valid, there will be no output and the script will pass.
+If there are problems these will be reported.
+
+You can try this with some ready-made examples in this repo:
+
+``` bash
+jsonschema -i examples/nmdc-01.json jsonschema/nmdc.schema.json
+```
+
+Note: nmdc.schema.json describes each model object, its required
+attributes and attribute types. The examples themselves use JSON
+notation to allow multiple instances of the objects in the JSON schema,
+to be submitted in one file.
+
+You can also use the jsonschema library to validate directly from within
+your python.
+
+### What to do if your JSON does not validate
+
+There are 3 possibilities:
+
+1.  Your json is good, and the schema needs to be extended or modified
+    to account
+2.  you need to modify the json to conform
+3.  some other odd bug somewhere
+
+For 1, you can go right ahead and make PR on the schema yaml. However,
+if you are not comfortable doing this then you can get help from one of
+the schema developers. We recommend filing a new ticket explaining the
+issue.
+
+For 2, this is upon you to fix this, however debugging can be aided in
+pulling out single instances of your model objects, and verifying that
+you are creating valid JSON (ie: paste one instance of your object into
+<https://jsonlint.com/> or tools like it to verify its syntax). Another
+common issue is that you might have incorrect syntax for grouping many
+instances of a JSON object into an array. Using a small subsample of
+your data and an online linter as above, can aide in debugging this.
+Sometimes the validation can complain about invalid syntax if the
+attribute of an instance object disagrees with the schema's typing (ie:
+you have an integer where a string is expected).
+
+### NMDC Producer SOP
+
+It is expected that different providers of JSON within the NMDC take
+responsibility for validating their JSON. Aim1 can help with any
+problems.
+
+Currently not all providers of information to NMDC provide JSON - for
+example, GOLD is provided as database dumps, and an ETL process
+transforms this into JSON. In future we would like to move towards a
+situation where all information is provided as JSON.
