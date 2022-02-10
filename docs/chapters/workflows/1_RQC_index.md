@@ -10,7 +10,7 @@ trimming, artifact removal, linker trimming, adapter trimming, and
 spike-in removal (using BBDuk), and performs human/cat/dog/mouse/microbe
 removal (using BBMap).
 
-***The following parameters are used for \"rqcfilter2\" in this workflow::*** 
+***The following parameters are used for "rqcfilter2" in this workflow::*** 
 
  - qtrim=r     :  Quality-trim from right ends before mapping.
  - trimq=0     :  Trim quality threshold.
