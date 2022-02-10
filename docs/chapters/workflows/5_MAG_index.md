@@ -185,48 +185,49 @@ A partial JSON output file is shown below:
 Below is an example of all the output directory files with descriptions
 to the right.
 
-  FileName/DirectoryName                               Description
-  ---------------------------------------------------- -------------------------------------------------------------------------------------
-  1781_86104.bam.sorted                                sorted input bam file
-  1781_86104.depth                                     the contig depth coverage
-  1781_86104.depth.mapped                              the name mapped contig depth coverage
-  MAGs_stats.json                                      MAGs statistics in json format
-  bins.lowDepth.fa                                     lowDepth (mean cov \<1 ) filtered contigs fasta file by metaBat2
-  bins.tooShort.fa                                     tooShort (\< 3kb) filtered contigs fasta file by metaBat2
-  bins.unbinned.fa                                     unbinned fasta file
-  metabat-bins/                                        initial metabat2 binning result fasta output directory
-  checkm-out/bins/                                     hmm and marker genes analysis result directory for each bin
-  checkm-out/checkm.log                                checkm run log file
-  checkm-out/lineage.ms                                lists the markers used to assign taxonomy and the taxonomic level to which the bin
-  checkm-out/storage/                                  intermediate file directory
-  checkm_qa.out                                        checkm statistics report
-  hqmq-metabat-bins/                                   HQ and MQ bins contigs fasta files directory
-  gtdbtk_output/identify/                              gtdbtk marker genes identify result directory
-  gtdbtk_output/align/                                 gtdbtk genomes alignment result directory
-  gtdbtk_output/classify/                              gtdbtk genomes classification result directory
-  gtdbtk_output/gtdbtk.ar122.classify.tree             archaeal reference tree in Newick format containing analyzed genomes (bins)
-  gtdbtk_output/gtdbtk.ar122.markers_summary.tsv       summary tsv file for gtdbtk marker genes identify from the archaeal 122 marker set
-  gtdbtk_output/gtdbtk.ar122.summary.tsv               summary tsv file for gtdbtk archaeal genomes (bins) classification
-  gtdbtk_output/gtdbtk.bac120.classify.tree            bacterial reference tree in Newick format containing analyzed genomes (bins)
-  gtdbtk_output/gtdbtk.bac120.markers_summary.tsv      summary tsv file for gtdbtk marker genes identify from the bacterial 120 marker set
-  gtdbtk_output/gtdbtk.bac120.summary.tsv              summary tsv file for gtdbtk bacterial genomes (bins) classification
-  gtdbtk_output/gtdbtk.bac120.filtered.tsv             a list of genomes with an insufficient number of amino acids in MSA
-  gtdbtk_output/gtdbtk.bac120.msa.fasta                the MSA of the user genomes (bins) and the GTDB genomes
-  gtdbtk_output/gtdbtk.bac120.user_msa.fasta           the MSA of the user genomes (bins) only
-  gtdbtk_output/gtdbtk.translation_table_summary.tsv   the translation table determined for each sgenome (bins)
-  gtdbtk_output/gtdbtk.warnings.log                    gtdbtk warning message log
-  mbin-2021-01-31.sqlite                               sqlite db file stores MAGs metadata and statistics
-  mbin-nmdc.20210131.log                               the mbin-nmdc pipeline run log file
-  rc                                                   cromwell script sbumit return code
-  script                                               Task run commands
-  script.background                                    Bash script to run script.submit
-  script.submit                                        cromwell submit commands
-  stderr                                               standard error where task writes error message to
-  stderr.background                                    standard error where bash script writes error message to
-  stdout                                               standard output where task writes error message to
-  stdout.background                                    standard output where bash script writes error message to
-  complete.mbin                                        the dummy file to indicate the finish of the pipeline
+| FileName/DirectoryName                             | Description                                                                         |
+| -------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| 1781_86104.bam.sorted                              | sorted input bam file                                                               |
+| 1781_86104.depth                                   | the contig depth coverage                                                           |
+| 1781_86104.depth.mapped                            | the name mapped contig depth coverage                                               |
+| MAGs_stats.json                                    | MAGs statistics in json format                                                      |
+| bins.lowDepth.fa                                   | lowDepth (mean cov <1 ) filtered contigs fasta file by metaBat2                     |
+| bins.tooShort.fa                                   | tooShort (< 3kb) filtered contigs fasta file by metaBat2                            |
+| bins.unbinned.fa                                   | unbinned fasta file                                                                 |
+| metabat-bins/                                      | initial metabat2 binning result fasta output directory                              |
+| checkm-out/bins/                                   | hmm and marker genes analysis result directory for each bin                         |
+| checkm-out/checkm.log                              | checkm run log file                                                                 |
+| checkm-out/lineage.ms                              | lists the markers used to assign taxonomy and the taxonomic level to which the bin  |
+| checkm-out/storage/                                | intermediate file directory                                                         |
+| checkm_qa.out                                      | checkm statistics report                                                            |
+| hqmq-metabat-bins/                                 | HQ and MQ bins contigs fasta files directory                                        |
+| gtdbtk_output/identify/                            | gtdbtk marker genes identify result directory                                       |
+| gtdbtk_output/align/                               | gtdbtk genomes alignment result directory                                           |
+| gtdbtk_output/classify/                            | gtdbtk genomes classification result directory                                      |
+| gtdbtk_output/gtdbtk.ar122.classify.tree           | archaeal reference tree in Newick format containing analyzed genomes (bins)         |
+| gtdbtk_output/gtdbtk.ar122.markers_summary.tsv     | summary tsv file for gtdbtk marker genes identify from the archaeal 122 marker set  |
+| gtdbtk_output/gtdbtk.ar122.summary.tsv             | summary tsv file for gtdbtk archaeal genomes (bins) classification                  |
+| gtdbtk_output/gtdbtk.bac120.classify.tree          | bacterial reference tree in Newick format containing analyzed genomes (bins)        |
+| gtdbtk_output/gtdbtk.bac120.markers_summary.tsv    | summary tsv file for gtdbtk marker genes identify from the bacterial 120 marker set |
+| gtdbtk_output/gtdbtk.bac120.summary.tsv            | summary tsv file for gtdbtk bacterial genomes (bins) classification                 |
+| gtdbtk_output/gtdbtk.bac120.filtered.tsv           | a list of genomes with an insufficient number of amino acids in MSA                 |
+| gtdbtk_output/gtdbtk.bac120.msa.fasta              | the MSA of the user genomes (bins) and the GTDB genomes                             |
+| gtdbtk_output/gtdbtk.bac120.user_msa.fasta         | the MSA of the user genomes (bins) only                                             |
+| gtdbtk_output/gtdbtk.translation_table_summary.tsv | the translation table determined for each sgenome (bins)                            |
+| gtdbtk_output/gtdbtk.warnings.log                  | gtdbtk warning message log                                                          |
+| mbin-2021-01-31.sqlite                             | sqlite db file stores MAGs metadata and statistics                                  |
+| mbin-nmdc.20210131.log                             | the mbin-nmdc pipeline run log file                                                 |
+| rc                                                 | cromwell script sbumit return code                                                  |
+| script                                             | Task run commands                                                                   |
+| script.background                                  | Bash script to run script.submit                                                    |
+| script.submit                                      | cromwell submit commands                                                            |
+| stderr                                             | standard error where task writes error message to                                   |
+| stderr.background                                  | standard error where bash script writes error message to                            |
+| stdout                                             | standard output where task writes error message to                                  |
+| stdout.background                                  | standard output where bash script writes error message to                           |
+| complete.mbin                                      | the dummy file to indicate the finish of the pipeline                               |
 
+  
 # Version History
 
 -   1.0.2 (release date **02/24/2021**; previous versions: 1.0.1)
