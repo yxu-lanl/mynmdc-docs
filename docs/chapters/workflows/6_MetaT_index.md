@@ -31,10 +31,9 @@ following DockerHub (<https://hub.docker.com/r/microbiomedata/bbtools>,
 <https://hub.docker.com/r/microbiomedata/meta_t>, and
 <https://hub.docker.com/r/intelliseqngs/hisat2>)
 
-Requirements for Execution (recommendations are in bold):
-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--1.
-WDL-capable Workflow Execution Tool (**Cromwell**) 2. Container Runtime
-that can load Docker images (**Docker v2.1.0.3 or higher**)
+## Requirements for Execution (recommendations are in bold):
+1. WDL-capable Workflow Execution Tool (**Cromwell**) 
+2. Container Runtime that can load Docker images (**Docker v2.1.0.3 or higher**)
 
 ## Workflow Dependencies
 
@@ -141,60 +140,34 @@ annotation for each feature. An example of JSON outpus:
 Below is an example of the output directory files with descriptions to
 the right.
 
-  : Title
-
-  ----------------------------------------------------------------------------------------
-  Directory/File Name                      Description
-  ---------------------------------------- -----------------------------------------------
-  metat_output/sense_out.json              RPKM for each feature on + strand
-
-  metat_output/antisense_out.json          RPKM for each feature on - strand
-
-  assembly/megahit_assem.contigs.fa        assembled transcripts
-
-  mapback/mapped_sorted.bam                alignment of reads and transcripts
-
-  qa/\_interleaved.fastq                   non-ribosomal reads
-
-  qa/filterStats.txt                       summary statistics in JSON format
-
-  qa/filterStats2.txt                      more detailed summary statistics
-
-  annotation/annotations.json              annotation information
-
-  annotation/features.json                 feature information
-
-  annotation/\_cath_funfam.gff             features from cath database
-
-  annotation/\_cog.gff                     features from cog databse
-
-  annotation/\_ko_ec.gff                   features from ko database
-
-  annotation/\_pfam.gff                    features from pfam database
-
-  annotation/\_smart.gff                   features from smart database
-
-  annotation/\_structural_annotation.gff   structural features
-
-  annotation/\_supfam.gff                  features from supfam databse
-
-  annotation/\_tigrfam.gff                 features from trigfam database
-
-  annotation/\_functional_annotation.gff   functional features
-
-  annotation/\_ec.tsv                      ec terms tsv
-
-  annotation/\_ko.tsv                      ko terms tsv
-
-  annotation/proteins.faa                  fasta containing protiens
-  ----------------------------------------------------------------------------------------
-
-  : Title
+| Directory/File Name                   | Description                        |
+| ------------------------------------- | ---------------------------------- |
+| metat_output/sense_out.json           | RPKM for each feature on + strand  |
+| metat_output/antisense_out.json       | RPKM for each feature on - strand  |
+| assembly/megahit_assem.contigs.fa     | assembled transcripts              |
+| mapback/mapped_sorted.bam             | alignment of reads and transcripts |
+| qa/_interleaved.fastq                 | non-ribosomal reads                |
+| qa/filterStats.txt                    | summary statistics in JSON format  |
+| qa/filterStats2.txt                   | more detailed summary statistics   |
+| annotation/annotations.json           | annotation information             |
+| annotation/features.json              | feature information                |
+| annotation/_cath_funfam.gff           | features from cath database        |
+| annotation/_cog.gff                   | features from cog databse          |
+| annotation/_ko_ec.gff                 | features from ko database          |
+| annotation/_pfam.gff                  | features from pfam database        |
+| annotation/_smart.gff                 | features from smart database       |
+| annotation/_structural_annotation.gff | structural features                |
+| annotation/_supfam.gff                | features from supfam databse       |
+| annotation/_tigrfam.gff               | features from trigfam database     |
+| annotation/_functional_annotation.gff | functional features                |
+| annotation/_ec.tsv                    | ec terms tsv                       |
+| annotation/_ko.tsv                    | ko terms tsv                       |
+| annotation/proteins.faa               | fasta containing protiens          |
 
 ## Version History
 
--   0.0.2 (release date 01/14/2021; previous versions: 0.0.1)
+- 0.0.2 (release date 01/14/2021; previous versions: 0.0.1)
+- 0.0.3 (release date 07/28/2021; previous versions: 0.0.2) 
 
-\- 0.0.3 (release date 07/28/2021; previous versions: 0.0.2) Points of
-contact \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-- Author: Migun Shakya
-\<<migun@lanl.gov>\>
+## Points of contact
+- Author: Migun Shakya \<<migun@lanl.gov>\>
