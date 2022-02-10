@@ -1,13 +1,13 @@
 .. toctree::
    :maxdepth: 2
 
-   overview.rst
-   1_RQC_index.rst
-   2_ReadAnalysis_index.rst
-   3_MetaGAssemly_index.rst
-   4_MetaGAnnotation_index.rst
-   5_MAG_index.rst
-   6_MetaT_index.rst
-   7_Metaproteomics_index.rst
-   8_Metabolomics_index.rst
-   9_NOM_index.rst
+   overview.md
+   1_RQC_index.md
+   2_ReadAnalysis_index.md
+   3_MetaGAssemly_index.md
+   4_MetaGAnnotation_index.md
+   5_MAG_index.md
+   6_MetaT_index.md
+   7_Metaproteomics_index.md
+   8_Metabolomics_index.md
+   9_NOM_index.md
