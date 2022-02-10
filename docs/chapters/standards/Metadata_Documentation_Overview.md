@@ -12,9 +12,7 @@ Everything You Always Wanted to Know About Metadata and Ontologies (But
 Were Afraid to Ask)*
 ([<u>https://doi.org/10.25979/1607365</u>](https://doi.org/10.25979/1607365)).
 
-<div align="center">
-	![image](../../_static/images/NMDC_metadata_img1.png)
-</div>
+![image](../../_static/images/NMDC_metadata_img1.png)
 
 Figure 1: Microbiome metadata types: Information that contextualizes
 sample including its geographic location and collection date, sample
@@ -111,9 +109,7 @@ environment) are described using a five-level ecosystem classification
 schema also uses this ecosystem classification to describe sample
 environments.
 
-<div align="center">
 ![image](../../_static/images/NMDC_metadata_img2.png)
-</div>
 
 Figure 2. The GOLD five-level ecosystem classification paths
 ([<u>Mukherjee 2019</u>](https://pubmed.ncbi.nlm.nih.gov/33152092/)).
@@ -250,9 +246,7 @@ site, identifier, ecosystem classification path, and study description.
 The NMDC team is currently working on exploring solutions for automated
 mapping between GOLD and MIxS/EnvO.
 
-<div align="center">
-	![image](../../_static/images/NMDC_metadata_img6.png)
-</div>
+![image](../../_static/images/NMDC_metadata_img6.png)
 
 Figure 3: Mapping between the MIxS/EnvO triad and the GOLD ecosystem
 classification enables integration of sample environments defined with
