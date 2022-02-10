@@ -52,40 +52,25 @@ Please refer to:
 
 ### Inputs
 
--   
+- ***Supported format for low resolution GC-MS data:***
+    -   ANDI NetCDF for GC-MS (.cdf)
 
-    Supported format for low resolution GC-MS data:
+- ***Fatty Acid Methyl Esters Calibration File:***
+    -   ANDI NetCDF for GC-MS (.cdf) - C8 to C30
 
-    :   -   ANDI NetCDF for GC-MS (.cdf)
-
--   
-
-    Fatty Acid Methyl Esters Calibration File:
-
-    :   -   ANDI NetCDF for GC-MS (.cdf) - C8 to C30
-
--   
-
-    Parameters:
-
-    :   -   CoreMS Parameter File (.json)
-        -   MetaMS Parameter File (.json)
+- ***Parameters:***
+    -   CoreMS Parameter File (.json)
+    -   MetaMS Parameter File (.json)
 
 ### Outputs
 
--   
+- ***Metabolites data-table***
+    -   CSV, TAB-SEPARATED TXT
+    -   HDF: CoreMS HDF5 format
+    -   XLSX : Microsoft Excel
 
-    Metabolites data-table
-
-    :   -   CSV, TAB-SEPARATED TXT
-        -   HDF: CoreMS HDF5 format
-        -   XLSX : Microsoft Excel
-
--   
-
-    Workflow Metadata:
-
-    :   -   JSON
+- ***Workflow Metadata:***
+    -   JSON
 
 ## Requirements for Execution
 
