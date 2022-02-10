@@ -1,4 +1,5 @@
-Metaproteomic Workflow (v2.0.0) ==============================
+Metaproteomic Workflow (v2.0.0) 
+==============================
 
 # Summary
 
@@ -88,15 +89,11 @@ The workflow is available in GitHub:
 
 ## Inputs
 
--   [.raw]{.title-ref}, [metagenome]{.title-ref}, [parameter files :
-    MSGFplus & MASIC]{.title-ref}, [contaminant_file]{.title-ref}
+-  .raw, metagenome, parameter files : MSGFplus & MASIC, contaminant_file
 
 ## Outputs
 
 1.  Processing multiple datasets.
-
-``` bash
-```
 
 2.  Processing single FICUS dataset.
 
