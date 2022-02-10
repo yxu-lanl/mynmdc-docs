@@ -1,4 +1,4 @@
 .. toctree::
    :maxdepth: 2
 
-   overview/overview.rst
+   overview/overview.md
