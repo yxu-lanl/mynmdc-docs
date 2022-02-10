@@ -43,23 +43,18 @@ Docker image is available in DockerHub:
 
 ## Workflow Dependencies
 
--   
+- ***Third party software (This is included in the Docker image.)***   
+   - Conda (3-clause BSD)
+   - tRNAscan-SE >= 2.0 (GNU GPL v3)
+   - Infernal 1.1.2 (BSD)
+   - CRT-CLI 1.8 (Public domain software, last official version is 1.2)
+   - Prodigal 2.6.3 (GNU GPL v3)
+   - GeneMarkS-2 >= 1.07 (Academic license for GeneMark family software)
+   - Last >= 983 (GNU GPL v3)
+   - HMMER 3.1b2 (3-clause BSD)
+   - TMHMM 2.0 (Academic)
 
-    Third party software (This is included in the Docker image.)
-
-    :   -   Conda (3-clause BSD)
-        -   tRNAscan-SE \>= 2.0 (GNU GPL v3)
-        -   Infernal 1.1.2 (BSD)
-        -   CRT-CLI 1.8 (Public domain software, last official version
-            is 1.2)
-        -   Prodigal 2.6.3 (GNU GPL v3)
-        -   GeneMarkS-2 \>= 1.07 (Academic license for GeneMark family
-            software)
-        -   Last \>= 983 (GNU GPL v3)
-        -   HMMER 3.1b2 (3-clause BSD)
-        -   TMHMM 2.0 (Academic)
-
--   Requisite databases: The databases are available by request. Please
+- Requisite databases: The databases are available by request. Please
     contact NMDC (<support@microbiomedata.org>) for access.
 
 ## Sample datasets
