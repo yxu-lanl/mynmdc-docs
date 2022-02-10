@@ -54,43 +54,28 @@ Please refer to:
 
 ### Inputs
 
--   
-
-    Supported format for Direct Infusion FT-MS data:
-
-    :   -   Thermo raw file (.raw)
-        -   Bruker raw file (.d)
-        -   Generic mass list in profile and/or centroid mode (inclusive
+- ***Supported format for Direct Infusion FT-MS data:***
+    -   Thermo raw file (.raw)
+    -   Bruker raw file (.d)
+    -   Generic mass list in profile and/or centroid mode (inclusive
             of all delimiters types and Excel formats)
 
--   
+- ***Calibration File:***
+    -   Molecular Formula Reference (.ref)
 
-    Calibration File:
-
-    :   -   Molecular Formula Reference (.ref)
-
--   
-
-    Parameters:
-
-    :   -   CoreMS Parameter File (.json)
-        -   EnviroMS Parameter File (.json)
+-  ***Parameters:***
+    -   CoreMS Parameter File (.json)
+    -   EnviroMS Parameter File (.json)
 
 ### Outputs
 
--   
+-  ***Molecular Formula Data-Table, containing m/z measuments, Peak height, Peak Area, Molecular Formula Identification, Ion Type, Confidence Score, etc.***
+    -   CSV, TAB-SEPARATED TXT
+    -   HDF: CoreMS HDF5 format
+    -   XLSX : Microsoft Excel
 
-    Molecular Formula Data-Table, containing m/z measuments, Peak height, Peak Area, Molecular Formula Identification, Ion Type, Confidence Score, etc.
-
-    :   -   CSV, TAB-SEPARATED TXT
-        -   HDF: CoreMS HDF5 format
-        -   XLSX : Microsoft Excel
-
--   
-
-    Workflow Metadata:
-
-    :   -   JSON
+- ***Workflow Metadata:***
+    -   JSON
 
 ## Requirements for Execution
 
