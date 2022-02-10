@@ -87,7 +87,7 @@ removal (using BBMap).
  - trimfragadapter=true:  Trim all known Illumina adapter sequences, including TruSeq and Nextera.
  - removemicrobes=true :  Remove common contaminant microbial reads via mapping, and place them in a separate file.
 
-Workflow Availability
+### Workflow Availability
 
 The workflow from GitHub uses all the listed docker images to run all
 third-party tools. The workflow is available in GitHub:
@@ -141,15 +141,11 @@ The following commands will download the database:
     is \~5.7 GB. You can find input/output in the downloaded tar gz
     file.
 
-::: note
-::: title
 Note
-:::
 
 If the input data is paired-end data, it must be in interleaved format.
 The following command will interleave the files, using the above dataset
 as an example:
-:::
 
 ``` bash
 paste <(zcat SRR7877884_1.fastq.gz | paste - - - -) <(zcat SRR7877884_2.fastq.gz | paste - - - -) | tr '\t' '\n' | gzip -c > SRR7877884-int.fastq.gz
@@ -190,17 +186,13 @@ An example input JSON file is shown below:
 }
 ```
 
-::: note
-::: title
 Note
-:::
 
 In an HPC environment, parallel processing allows for processing
 multiple samples. The \"jgi_rqcfilter.input_files\" parameter is an
 array data structure. It can be used for multiple samples as input
 separated by a comma (,). Ex:
 \"jgi_rqcfilter.input_files\":\["first-int.fastq","second-int.fastq"\]
-:::
 
 ### Output
 
@@ -236,98 +228,40 @@ An example output JSON file (filterStats.json) is shown below:
 Below is an example of all the output directory files with descriptions
 to the right.
 
-+----------------------------------+----------------------------------+
-| FileName                         | Description                      |
-+==================================+==================================+
-| SRR                              | > main output (clean data)       |
-| 7877884-int-0.1.anqdpht.fastq.gz |                                  |
-+----------------------------------+----------------------------------+
-| adaptersDetected.fa              | > adapters detected and removed  |
-+----------------------------------+----------------------------------+
-| bhist.txt                        | > base composition histogram by  |
-|                                  | > position                       |
-+----------------------------------+----------------------------------+
-| cardinality.txt                  | > estimation of the number of    |
-|                                  | > unique kmers                   |
-+----------------------------------+----------------------------------+
-| commonMicrobes.txt               | > detected common microbes       |
-+----------------------------------+----------------------------------+
-| file-list.txt                    | > output file list for           |
-|                                  | > rqcfilter2.sh                  |
-+----------------------------------+----------------------------------+
-| filterStats.txt                  | > summary statistics             |
-+----------------------------------+----------------------------------+
-| filterStats.json                 | > summary statistics in JSON     |
-|                                  | > format                         |
-+----------------------------------+----------------------------------+
-| filterStats2.txt                 | > more detailed summary          |
-|                                  | > statistics                     |
-+----------------------------------+----------------------------------+
-| gchist.txt                       | > GC content histogram           |
-+----------------------------------+----------------------------------+
-| human.fq.gz                      | > detected human sequence reads  |
-+----------------------------------+----------------------------------+
-| ihist_merge.txt                  | > insert size histogram          |
-+----------------------------------+----------------------------------+
-| khist.txt                        | > kmer-frequency histogram       |
-+----------------------------------+----------------------------------+
-| kmerStats1.txt                   | > synthetic molecule (phix,      |
-|                                  | > linker, lamda, pJET) filter    |
-|                                  | > run log                        |
-+----------------------------------+----------------------------------+
-| kmerStats2.txt                   | > synthetic molecule (short      |
-|                                  | > contamination) filter run log  |
-+----------------------------------+----------------------------------+
-| ktrim_kmerStats1.txt             | > detected adapters filter run   |
-|                                  | > log                            |
-+----------------------------------+----------------------------------+
-| ktrim_scaffoldStats1.txt         | > detected adapters filter       |
-|                                  | > statistics                     |
-+----------------------------------+----------------------------------+
-| microbes.fq.gz                   | > detected common microbes       |
-|                                  | > sequence reads                 |
-+----------------------------------+----------------------------------+
-| microbesUsed.txt                 | > common microbes list for       |
-|                                  | > detection                      |
-+----------------------------------+----------------------------------+
-| peaks.txt                        | > number of unique kmers in each |
-|                                  | > peak on the histogram          |
-+----------------------------------+----------------------------------+
-| phist.txt                        | > polymer length histogram       |
-+----------------------------------+----------------------------------+
-| refStats.txt                     | > human reads filter statistics  |
-+----------------------------------+----------------------------------+
-| reproduce.sh                     | > the shell script to reproduce  |
-|                                  | > the run                        |
-+----------------------------------+----------------------------------+
-| scaffoldStats1.txt               | > detected synthetic molecule    |
-|                                  | > (phix, linker, lamda, pJET)    |
-|                                  | > statistics                     |
-+----------------------------------+----------------------------------+
-| scaffoldStats2.txt               | > detected synthetic molecule    |
-|                                  | > (short contamination)          |
-|                                  | > statistics                     |
-+----------------------------------+----------------------------------+
-| scaffoldStatsSpikein.txt         | > detected skipe-in kapa tag     |
-|                                  | > statistics                     |
-+----------------------------------+----------------------------------+
-| sketch.txt                       | > mash type sketch scanned       |
-|                                  | > result against nt, refseq,     |
-|                                  | > silva database sketches.       |
-+----------------------------------+----------------------------------+
-| spikein.fq.gz                    | > detected skipe-in kapa tag     |
-|                                  | > sequence reads                 |
-+----------------------------------+----------------------------------+
-| status.log                       | > rqcfilter2.sh running log      |
-+----------------------------------+----------------------------------+
-| synth1.fq.gz                     | > detected synthetic molecule    |
-|                                  | > (phix, linker, lamda, pJET)    |
-|                                  | > sequence reads                 |
-+----------------------------------+----------------------------------+
-| synth2.fq.gz                     | > detected synthetic molecule    |
-|                                  | > (short contamination) sequence |
-|                                  | > reads                          |
-+----------------------------------+----------------------------------+
+| FileName                            | Description                                                                  |
+| ----------------------------------- | ---------------------------------------------------------------------------- |
+| SRR7877884-int-0.1.anqdpht.fastq.gz | main output (clean data)                                                     |
+| adaptersDetected.fa                 | adapters detected and removed                                                |
+| bhist.txt                           | base composition histogram by position                                       |
+| cardinality.txt                     | estimation of the number of unique kmers                                     |
+| commonMicrobes.txt                  | detected common microbes                                                     |
+| file-list.txt                       | output file list for rqcfilter2.sh                                           |
+| filterStats.txt                     | summary statistics                                                           |
+| filterStats.json                    | summary statistics in JSON format                                            |
+| filterStats2.txt                    | more detailed summary statistics                                             |
+| gchist.txt                          | GC content histogram                                                         |
+| human.fq.gz                         | detected human sequence reads                                                |
+| ihist_merge.txt                     | insert size histogram                                                        |
+| khist.txt                           | kmer-frequency histogram                                                     |
+| kmerStats1.txt                      | synthetic molecule (phix, linker, lamda, pJET) filter run log                |
+| kmerStats2.txt                      | synthetic molecule (short contamination) filter run log                      |
+| ktrim_kmerStats1.txt                | detected adapters filter run log                                             |
+| ktrim_scaffoldStats1.txt            | detected adapters filter statistics                                          |
+| microbes.fq.gz                      | detected common microbes sequence reads                                      |
+| microbesUsed.txt                    | common microbes list for detection                                           |
+| peaks.txt                           | number of unique kmers in each peak on the histogram                         |
+| phist.txt                           | polymer length histogram                                                     |
+| refStats.txt                        | human reads filter statistics                                                |
+| reproduce.sh                        | the shell script to reproduce the run                                        |
+| scaffoldStats1.txt                  | detected synthetic molecule (phix, linker, lamda, pJET) statistics           |
+| scaffoldStats2.txt                  | detected synthetic molecule (short contamination) statistics                 |
+| scaffoldStatsSpikein.txt            | detected skipe-in kapa tag statistics                                        |
+| sketch.txt                          | mash type sketch scanned result against nt, refseq, silva database sketches. |
+| spikein.fq.gz                       | detected skipe-in kapa tag sequence reads                                    |
+| status.log                          | rqcfilter2.sh running log                                                    |
+| synth1.fq.gz                        | detected synthetic molecule (phix, linker, lamda, pJET) sequence reads       |
+| synth2.fq.gz                        | detected synthetic molecule (short contamination) sequence reads             |
+
 
 ### Version History
 
@@ -340,7 +274,7 @@ to the right.
 
 ## The Read-based Taxonomy Classification (v1.0.1)
 
-![image](../_static/images/2_ReadAnalysis_readbased_analysis_workflow.png){.align-center}
+![image](../../_static/images/2_ReadAnalysis_readbased_analysis_workflow.png)
 
 ### Workflow Overview
 
@@ -480,18 +414,20 @@ results, a tabular report, and a Krona plot (html).:
 Below is an example of the output directory files with descriptions to
 the right.
 
-  FileName                                   Description
-  ------------------------------------------ ------------------------------------------------
-  SRR7877884.json                            ReadbasedAnalysis result JSON file
-  centrifuge/SRR7877884.classification.tsv   Centrifuge output read classification TSV file
-  centrifuge/SRR7877884.report.tsv           Centrifuge output report TSV file
-  centrifuge/SRR7877884.krona.html           Centrifuge krona plot HTML file
-  gottcha2/SRR7877884.full.tsv               GOTTCHA2 detail output TSV file
-  gottcha2/SRR7877884.tsv                    GOTTCHA2 output report TSV file
-  gottcha2/SRR7877884.krona.html             GOTTCHA2 krona plot HTML file
-  kraken2/SRR7877884.classification.tsv      Kraken2 output read classification TSV file
-  kraken2/SRR7877884.report.tsv              Kraken2 output report TSV file
-  kraken2/SRR7877884.krona.html              Kraken2 krona plot HTML file
+  
+| FileName                                 | Description                                    |
+| ---------------------------------------- | ---------------------------------------------- |
+| SRR7877884.json                          | ReadbasedAnalysis result JSON file             |
+| centrifuge/SRR7877884.classification.tsv | Centrifuge output read classification TSV file |
+| centrifuge/SRR7877884.report.tsv         | Centrifuge output report TSV file              |
+| centrifuge/SRR7877884.krona.html         | Centrifuge krona plot HTML file                |
+| gottcha2/SRR7877884.full.tsv             | GOTTCHA2 detail output TSV file                |
+| gottcha2/SRR7877884.tsv                  | GOTTCHA2 output report TSV file                |
+| gottcha2/SRR7877884.krona.html           | GOTTCHA2 krona plot HTML file                  |
+| kraken2/SRR7877884.classification.tsv    | Kraken2 output read classification TSV file    |
+| kraken2/SRR7877884.report.tsv            | Kraken2 output report TSV file                 |
+| kraken2/SRR7877884.krona.html            | Kraken2 krona plot HTML file                   |
+
 
 ### Version History
 
@@ -503,7 +439,7 @@ Package maintainer: Po-E Li \<<po-e@lanl.gov>\>
 
 ## Metagenome Assembly Workflow (v1.0.2)
 
-![Metagenome assembly workflow dependencies](../_static/images/3_MetaGAssemly_workflow_assembly.png)
+![Metagenome assembly workflow dependencies](../../_static/images/3_MetaGAssemly_workflow_assembly.png)
 
 ### Workflow Overview
 
@@ -556,16 +492,12 @@ file:
 
     predicted_mem = (kmers * 2.962e-08 + 1.630e+01) * 1.1 (in GB)
 
-::: note
-::: title
 Note
-:::
 
 The kmers variable for the equation above can be obtained using the
 kmercountmulti.sh script from BBTools.
 
 kmercountmulti.sh -k=31 in=your.read.fq.gz
-:::
 
 ### Workflow Dependencies
 
@@ -639,72 +571,114 @@ The output directory will contain following files:
 
 Part of an example output stats JSON file is shown below:
 
-`` ` {    "scaffolds": 58,    "contigs": 58,    "scaf_bp": 28406,    "contig_bp": 28406,    "gap_pct": 0.00000,    "scaf_N50": 21,    "scaf_L50": 536,    "ctg_N50": 21,    "ctg_L50": 536,    "scaf_N90": 49,    "scaf_L90": 317,    "ctg_N90": 49,    "ctg_L90": 317,    "scaf_logsum": 22.158,    "scaf_powsum": 2.245,    "ctg_logsum": 22.158,    "ctg_powsum": 2.245,    "asm_score": 0.000,    "scaf_max": 1117,    "ctg_max": 1117,    "scaf_n_gt50K": 0,    "scaf_l_gt50K": 0,    "scaf_pct_gt50K": 0.0,    "gc_avg": 0.39129,    "gc_std": 0.03033,    "filename": "/global/cfs/cdirs/m3408/aim2/metagenome/assembly/cromwell-executions/jgi_metaASM/3342a6e8-7f78-40e6-a831-364dd2a47baa/call-create_agp/execution/assembly_scaffolds.fna" } ``\`
+    {
+        "scaffolds": 58,
+        "contigs": 58,
+        "scaf_bp": 28406,
+        "contig_bp": 28406,
+        "gap_pct": 0.00000,
+        "scaf_N50": 21,
+        "scaf_L50": 536,
+        "ctg_N50": 21,
+        "ctg_L50": 536,
+        "scaf_N90": 49,
+        "scaf_L90": 317,
+        "ctg_N90": 49,
+        "ctg_L90": 317,
+        "scaf_logsum": 22.158,
+        "scaf_powsum": 2.245,
+        "ctg_logsum": 22.158,
+        "ctg_powsum": 2.245,
+        "asm_score": 0.000,
+        "scaf_max": 1117,
+        "ctg_max": 1117,
+        "scaf_n_gt50K": 0,
+        "scaf_l_gt50K": 0,
+        "scaf_pct_gt50K": 0.0,
+        "gc_avg": 0.39129,
+        "gc_std": 0.03033,
+        "filename": "/global/cfs/cdirs/m3408/aim2/metagenome/assembly/cromwell-executions/jgi_metaASM/3342a6e8-7f78-40e6-a831-364dd2a47baa/call-create_agp/execution/assembly_scaffolds.fna"
+    }
+
+
 
 The table provides all of the output directories, files, and their
 descriptions.
 
-  Directory                                                                                                  File Name                           Description
-  ---------------------------------------------------------------------------------------------------------- ----------------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  **bbcms** bbcms/berkeleylab-jgi-meta-60ade422cd4e                                                                                              Error correction result directory directory containing checking resource script
-  bbcms/                                                                                                     counts.metadata.json                bbcms commands and summary statistics in JSON format
-  bbcms/                                                                                                     input.corr.fastq.gz                 error corrected reads in interleaved format.
-  bbcms/                                                                                                     input.corr.left.fastq.gz            error corrected forward reads
-  bbcms/                                                                                                     input.corr.right.fastq.gz           error corrected reverse reads
-  bbcms/                                                                                                     rc                                  cromwell script sbumit return code
-  bbcms/                                                                                                     readlen.txt                         error corrected reads statistics
-  bbcms/                                                                                                     resources.log                       resource checking log
-  bbcms/                                                                                                     script                              Task run commands
-  bbcms/                                                                                                     script.background                   Bash script to run script.submit
-  bbcms/                                                                                                     script.submit                       cromwell submit commands
-  bbcms/                                                                                                     stderr                              standard error where task writes error message to
-  bbcms/                                                                                                     stderr.background                   standard error where bash script writes error message to
-  bbcms/                                                                                                     stderr.log                          standard error from bbcms command
-  bbcms/                                                                                                     stdout                              standard output where task writes error message to
-  bbcms/                                                                                                     stdout.background                   standard output where bash script writes error message(s)
-  bbcms/                                                                                                     stdout.log                          standard output from bbcms command
-  bbcms/ **spades3** spades3/K33 spades3/K55 spades3/K77 spades3/K99 spades3/K127 spades3/misc spades3/tmp   unique31mer.txt                     the count of unique kmer, K=31 metaSPAdes assembly result directory directory containing intermediate files from the run with K=33 directory containing intermediate files from the run with K=55 directory containing intermediate files from the run with K=77 directory containing intermediate files from the run with K=99 directory containing intermediate files from the run with K=127 directory containing miscellaneous files directory for temp files
-  spades3/                                                                                                   assembly_graph.fastg                metaSPAdes assembly graph in FASTG format
-  spades3/                                                                                                   assembly_graph_with_scaffolds.gfa   metaSPAdes assembly graph and scaffolds paths in GFA 1.0 format
-  spades3/                                                                                                   before_rr.fasta                     contigs before repeat resolution
-  spades3/                                                                                                   contigs.fasta                       metaSPAdes resulting contigs
-  spades3/                                                                                                   contigs.paths                       paths in the assembly graph corresponding to contigs.fasta
-  spades3/                                                                                                   dataset.info                        internal configuration file
-  spades3/                                                                                                   first_pe_contigs.fasta              preliminary contigs of iterative kmers assembly
-  spades3/                                                                                                   input_dataset.yaml                  internal YAML data set file
-  spades3/                                                                                                   params.txt                          information about SPAdes parameters in this run
-  spades3/                                                                                                   scaffolds.fasta                     metaSPAdes resulting scaffolds
-  spades3/                                                                                                   scaffolds.paths                     paths in the assembly graph corresponding to scaffolds.fasta
-  spades3/ **final_assembly** final_assembly/berkeleylab-jgi-meta-60ade422cd4e                               spades.log                          metaSPAdes log create_agp task result directory directory containing checking resource script
-  final_assembly/                                                                                            assembly.agp                        an AGP format file describes the assembly
-  final_assembly/                                                                                            assembly_contigs.fna                Final assembly contig fasta
-  final_assembly/                                                                                            assembly_scaffolds.fna              Final assembly scaffolds fasta
-  final_assembly/                                                                                            assembly_scaffolds.legend           name mapping file from spades node name to new name
-  final_assembly/                                                                                            rc                                  cromwell script sbumit return code
-  final_assembly/                                                                                            resources.log                       resource checking log
-  final_assembly/                                                                                            script                              Task run commands
-  final_assembly/                                                                                            script.background                   Bash script to run script.submit
-  final_assembly/                                                                                            script.submit                       cromwell submit commands
-  final_assembly/                                                                                            stats.json                          assembly statistics in json format
-  final_assembly/                                                                                            stderr                              standard error where task writes error message to
-  final_assembly/                                                                                            stderr.background                   standard error where bash script writes error message to
-  final_assembly/                                                                                            stdout                              standard output where task writes error message to
-  final_assembly/ **mapping**                                                                                stdout.background                   standard output where bash script writes error message to maps reads back to the final assembly result directory
-  mapping/                                                                                                   covstats.txt                        contigs coverage informaiton
-  mapping/                                                                                                   mapping_stats.txt                   contigs coverage informaiton (same as covstats.txt)
-  mapping/                                                                                                   pairedMapped.bam                    reads mapping back to the final assembly bam file
-  mapping/                                                                                                   pairedMapped.sam.gz                 reads mapping back to the final assembly sam.gz file
-  mapping/                                                                                                   pairedMapped_sorted.bam             reads mapping back to the final assembly sorted bam file
-  mapping/                                                                                                   pairedMapped_sorted.bam.bai         reads mapping back to the final assembly sorted bam index file
-  mapping/                                                                                                   rc                                  cromwell script sbumit return code
-  mapping/                                                                                                   resources.log                       resource checking log
-  mapping/                                                                                                   script                              Task run commands
-  mapping/                                                                                                   script.background                   Bash script to run script.submit
-  mapping/                                                                                                   script.submit                       cromwell submit commands
-  mapping/                                                                                                   stderr                              standard error where task writes error message to
-  mapping/                                                                                                   stderr.background                   standard error where bash script writes error message to
-  mapping/                                                                                                   stdout                              standard output where task writes error message to
-  mapping/                                                                                                   stdout.background                   standard output where bash script writes error message to
+| Directory                                        | File Name                                                                                         | Description                                                    |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| **bbcms**                                        | Error correction result directory                                                                 |                                                                |
+| bbcms/berkeleylab-jgi-meta-60ade422cd4e          | directory containing checking resource script                                                     |                                                                |
+| bbcms/                                           | counts.metadata.json                                                                              | bbcms commands and summary statistics in JSON format           |
+| bbcms/                                           | input.corr.fastq.gz                                                                               | error corrected reads in interleaved format.                   |
+| bbcms/                                           | input.corr.left.fastq.gz                                                                          | error corrected forward reads                                  |
+| bbcms/                                           | input.corr.right.fastq.gz                                                                         | error corrected reverse reads                                  |
+| bbcms/                                           | rc                                                                                                | cromwell script sbumit return code                             |
+| bbcms/                                           | readlen.txt                                                                                       | error corrected reads statistics                               |
+| bbcms/                                           | resources.log                                                                                     | resource checking log                                          |
+| bbcms/                                           | script                                                                                            | Task run commands                                              |
+| bbcms/                                           | script.background                                                                                 | Bash script to run script.submit                               |
+| bbcms/                                           | script.submit                                                                                     | cromwell submit commands                                       |
+| bbcms/                                           | stderr                                                                                            | standard error where task writes error message to              |
+| bbcms/                                           | stderr.background                                                                                 | standard error where bash script writes error message to       |
+| bbcms/                                           | stderr.log                                                                                        | standard error from bbcms command                              |
+| bbcms/                                           | stdout                                                                                            | standard output where task writes error message to             |
+| bbcms/                                           | stdout.background                                                                                 | standard output where bash script writes error message(s)      |
+| bbcms/                                           | stdout.log                                                                                        | standard output from bbcms command                             |
+| bbcms/                                           | unique31mer.txt                                                                                   | the count of unique kmer, K=31                                 |
+| **spades3**                                      | metaSPAdes assembly result directory                                                              |                                                                |
+| spades3/K33                                      | directory containing intermediate files from the run with K=33                                    |                                                                |
+| spades3/K55                                      | directory containing intermediate files from the run with K=55                                    |                                                                |
+| spades3/K77                                      | directory containing intermediate files from the run with K=77                                    |                                                                |
+| spades3/K99                                      | directory containing intermediate files from the run with K=99                                    |                                                                |
+| spades3/K127                                     | directory containing intermediate files from the run with K=127                                   |                                                                |
+| spades3/misc                                     | directory containing miscellaneous files                                                          |                                                                |
+| spades3/tmp                                      | directory for temp files                                                                          |                                                                |
+| spades3/                                         | assembly_graph.fastg                                                                              | metaSPAdes assembly graph in FASTG format                      |
+| spades3/                                         | assembly_graph_with_scaffolds.gfa metaSPAdes assembly graph and scaffolds paths in GFA 1.0 format |                                                                |
+| spades3/                                         | before_rr.fasta                                                                                   | contigs before repeat resolution                               |
+| spades3/                                         | contigs.fasta                                                                                     | metaSPAdes resulting contigs                                   |
+| spades3/                                         | contigs.paths                                                                                     | paths in the assembly graph corresponding to contigs.fasta     |
+| spades3/                                         | dataset.info                                                                                      | internal configuration file                                    |
+| spades3/                                         | first_pe_contigs.fasta                                                                            | preliminary contigs of iterative kmers assembly                |
+| spades3/                                         | input_dataset.yaml                                                                                | internal YAML data set file                                    |
+| spades3/                                         | params.txt                                                                                        | information about SPAdes parameters in this run                |
+| spades3/                                         | scaffolds.fasta                                                                                   | metaSPAdes resulting scaffolds                                 |
+| spades3/                                         | scaffolds.paths                                                                                   | paths in the assembly graph corresponding to scaffolds.fasta   |
+| spades3/                                         | spades.log                                                                                        | metaSPAdes log                                                 |
+| **final_assembly**                               | create_agp task result directory                                                                  |                                                                |
+| final_assembly/berkeleylab-jgi-meta-60ade422cd4e | directory containing checking resource script                                                     |                                                                |
+| final_assembly/                                  | assembly.agp                                                                                      | an AGP format file describes the assembly                      |
+| final_assembly/                                  | assembly_contigs.fna                                                                              | Final assembly contig fasta                                    |
+| final_assembly/                                  | assembly_scaffolds.fna                                                                            | Final assembly scaffolds fasta                                 |
+| final_assembly/                                  | assembly_scaffolds.legend                                                                         | name mapping file from spades node name to new name            |
+| final_assembly/                                  | rc                                                                                                | cromwell script sbumit return code                             |
+| final_assembly/                                  | resources.log                                                                                     | resource checking log                                          |
+| final_assembly/                                  | script                                                                                            | Task run commands                                              |
+| final_assembly/                                  | script.background                                                                                 | Bash script to run script.submit                               |
+| final_assembly/                                  | script.submit                                                                                     | cromwell submit commands                                       |
+| final_assembly/                                  | stats.json                                                                                        | assembly statistics in json format                             |
+| final_assembly/                                  | stderr                                                                                            | standard error where task writes error message to              |
+| final_assembly/                                  | stderr.background                                                                                 | standard error where bash script writes error message to       |
+| final_assembly/                                  | stdout                                                                                            | standard output where task writes error message to             |
+| final_assembly/                                  | stdout.background                                                                                 | standard output where bash script writes error message to      |
+| **mapping**                                      | maps reads back to the final assembly result directory                                            |                                                                |
+| mapping/                                         | covstats.txt                                                                                      | contigs coverage informaiton                                   |
+| mapping/                                         | mapping_stats.txt                                                                                 | contigs coverage informaiton (same as covstats.txt)            |
+| mapping/                                         | pairedMapped.bam                                                                                  | reads mapping back to the final assembly bam file              |
+| mapping/                                         | pairedMapped.sam.gz                                                                               | reads mapping back to the final assembly sam.gz file           |
+| mapping/                                         | pairedMapped_sorted.bam                                                                           | reads mapping back to the final assembly sorted bam file       |
+| mapping/                                         | pairedMapped_sorted.bam.bai                                                                       | reads mapping back to the final assembly sorted bam index file |
+| mapping/                                         | rc                                                                                                | cromwell script sbumit return code                             |
+| mapping/                                         | resources.log                                                                                     | resource checking log                                          |
+| mapping/                                         | script                                                                                            | Task run commands                                              |
+| mapping/                                         | script.background                                                                                 | Bash script to run script.submit                               |
+| mapping/                                         | script.submit                                                                                     | cromwell submit commands                                       |
+| mapping/                                         | stderr                                                                                            | standard error where task writes error message to              |
+| mapping/                                         | stderr.background                                                                                 | standard error where bash script writes error message to       |
+| mapping/                                         | stdout                                                                                            | standard output where task writes error message to             |
+| mapping/                                         | stdout.background                                                                                 | standard output where bash script writes error message to      |
+
 
 ### Version History
 
@@ -717,7 +691,7 @@ descriptions.
 
 ## Metagenome Annotation Workflow (v1.0.0)
 
-![image](../_static/images/4_MetaGAnnotation_annotation.png)
+![image](../../_static/images/4_MetaGAnnotation_annotation.png)
 
 ### Workflow Overview
 
@@ -760,23 +734,18 @@ Docker image is available in DockerHub:
 
 ### Workflow Dependencies
 
--   
+- ***Third party software (This is included in the Docker image.)***   
+   - Conda (3-clause BSD)
+   - tRNAscan-SE >= 2.0 (GNU GPL v3)
+   - Infernal 1.1.2 (BSD)
+   - CRT-CLI 1.8 (Public domain software, last official version is 1.2)
+   - Prodigal 2.6.3 (GNU GPL v3)
+   - GeneMarkS-2 >= 1.07 (Academic license for GeneMark family software)
+   - Last >= 983 (GNU GPL v3)
+   - HMMER 3.1b2 (3-clause BSD)
+   - TMHMM 2.0 (Academic)
 
-    Third party software (This is included in the Docker image.)
-
-    :   -   Conda (3-clause BSD)
-        -   tRNAscan-SE \>= 2.0 (GNU GPL v3)
-        -   Infernal 1.1.2 (BSD)
-        -   CRT-CLI 1.8 (Public domain software, last official version
-            is 1.2)
-        -   Prodigal 2.6.3 (GNU GPL v3)
-        -   GeneMarkS-2 \>= 1.07 (Academic license for GeneMark family
-            software)
-        -   Last \>= 983 (GNU GPL v3)
-        -   HMMER 3.1b2 (3-clause BSD)
-        -   TMHMM 2.0 (Academic)
-
--   Requisite databases: The databases are available by request. Please
+- Requisite databases: The databases are available by request. Please
     contact NMDC (<support@microbiomedata.org>) for access.
 
 ### Sample datasets
@@ -846,7 +815,7 @@ full metadata JSON file.
 
 ## Metagenome Assembled Genomes Workflow (v1.0.2)
 
-![Metagenome assembled genomes generation](../_static/images/5_MAG_MAG_workflow.png)
+![Metagenome assembled genomes generation](../../_static/images/5_MAG_MAG_workflow.png)
 
 ### Workflow Overview
 
@@ -1030,47 +999,49 @@ A partial JSON output file is shown below:
 Below is an example of all the output directory files with descriptions
 to the right.
 
-  FileName/DirectoryName                               Description
-  ---------------------------------------------------- -------------------------------------------------------------------------------------
-  1781_86104.bam.sorted                                sorted input bam file
-  1781_86104.depth                                     the contig depth coverage
-  1781_86104.depth.mapped                              the name mapped contig depth coverage
-  MAGs_stats.json                                      MAGs statistics in json format
-  bins.lowDepth.fa                                     lowDepth (mean cov \<1 ) filtered contigs fasta file by metaBat2
-  bins.tooShort.fa                                     tooShort (\< 3kb) filtered contigs fasta file by metaBat2
-  bins.unbinned.fa                                     unbinned fasta file
-  metabat-bins/                                        initial metabat2 binning result fasta output directory
-  checkm-out/bins/                                     hmm and marker genes analysis result directory for each bin
-  checkm-out/checkm.log                                checkm run log file
-  checkm-out/lineage.ms                                lists the markers used to assign taxonomy and the taxonomic level to which the bin
-  checkm-out/storage/                                  intermediate file directory
-  checkm_qa.out                                        checkm statistics report
-  hqmq-metabat-bins/                                   HQ and MQ bins contigs fasta files directory
-  gtdbtk_output/identify/                              gtdbtk marker genes identify result directory
-  gtdbtk_output/align/                                 gtdbtk genomes alignment result directory
-  gtdbtk_output/classify/                              gtdbtk genomes classification result directory
-  gtdbtk_output/gtdbtk.ar122.classify.tree             archaeal reference tree in Newick format containing analyzed genomes (bins)
-  gtdbtk_output/gtdbtk.ar122.markers_summary.tsv       summary tsv file for gtdbtk marker genes identify from the archaeal 122 marker set
-  gtdbtk_output/gtdbtk.ar122.summary.tsv               summary tsv file for gtdbtk archaeal genomes (bins) classification
-  gtdbtk_output/gtdbtk.bac120.classify.tree            bacterial reference tree in Newick format containing analyzed genomes (bins)
-  gtdbtk_output/gtdbtk.bac120.markers_summary.tsv      summary tsv file for gtdbtk marker genes identify from the bacterial 120 marker set
-  gtdbtk_output/gtdbtk.bac120.summary.tsv              summary tsv file for gtdbtk bacterial genomes (bins) classification
-  gtdbtk_output/gtdbtk.bac120.filtered.tsv             a list of genomes with an insufficient number of amino acids in MSA
-  gtdbtk_output/gtdbtk.bac120.msa.fasta                the MSA of the user genomes (bins) and the GTDB genomes
-  gtdbtk_output/gtdbtk.bac120.user_msa.fasta           the MSA of the user genomes (bins) only
-  gtdbtk_output/gtdbtk.translation_table_summary.tsv   the translation table determined for each sgenome (bins)
-  gtdbtk_output/gtdbtk.warnings.log                    gtdbtk warning message log
-  mbin-2021-01-31.sqlite                               sqlite db file stores MAGs metadata and statistics
-  mbin-nmdc.20210131.log                               the mbin-nmdc pipeline run log file
-  rc                                                   cromwell script sbumit return code
-  script                                               Task run commands
-  script.background                                    Bash script to run script.submit
-  script.submit                                        cromwell submit commands
-  stderr                                               standard error where task writes error message to
-  stderr.background                                    standard error where bash script writes error message to
-  stdout                                               standard output where task writes error message to
-  stdout.background                                    standard output where bash script writes error message to
-  complete.mbin                                        the dummy file to indicate the finish of the pipeline
+| FileName/DirectoryName                             | Description                                                                         |
+| -------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| 1781_86104.bam.sorted                              | sorted input bam file                                                               |
+| 1781_86104.depth                                   | the contig depth coverage                                                           |
+| 1781_86104.depth.mapped                            | the name mapped contig depth coverage                                               |
+| MAGs_stats.json                                    | MAGs statistics in json format                                                      |
+| bins.lowDepth.fa                                   | lowDepth (mean cov <1 ) filtered contigs fasta file by metaBat2                     |
+| bins.tooShort.fa                                   | tooShort (< 3kb) filtered contigs fasta file by metaBat2                            |
+| bins.unbinned.fa                                   | unbinned fasta file                                                                 |
+| metabat-bins/                                      | initial metabat2 binning result fasta output directory                              |
+| checkm-out/bins/                                   | hmm and marker genes analysis result directory for each bin                         |
+| checkm-out/checkm.log                              | checkm run log file                                                                 |
+| checkm-out/lineage.ms                              | lists the markers used to assign taxonomy and the taxonomic level to which the bin  |
+| checkm-out/storage/                                | intermediate file directory                                                         |
+| checkm_qa.out                                      | checkm statistics report                                                            |
+| hqmq-metabat-bins/                                 | HQ and MQ bins contigs fasta files directory                                        |
+| gtdbtk_output/identify/                            | gtdbtk marker genes identify result directory                                       |
+| gtdbtk_output/align/                               | gtdbtk genomes alignment result directory                                           |
+| gtdbtk_output/classify/                            | gtdbtk genomes classification result directory                                      |
+| gtdbtk_output/gtdbtk.ar122.classify.tree           | archaeal reference tree in Newick format containing analyzed genomes (bins)         |
+| gtdbtk_output/gtdbtk.ar122.markers_summary.tsv     | summary tsv file for gtdbtk marker genes identify from the archaeal 122 marker set  |
+| gtdbtk_output/gtdbtk.ar122.summary.tsv             | summary tsv file for gtdbtk archaeal genomes (bins) classification                  |
+| gtdbtk_output/gtdbtk.bac120.classify.tree          | bacterial reference tree in Newick format containing analyzed genomes (bins)        |
+| gtdbtk_output/gtdbtk.bac120.markers_summary.tsv    | summary tsv file for gtdbtk marker genes identify from the bacterial 120 marker set |
+| gtdbtk_output/gtdbtk.bac120.summary.tsv            | summary tsv file for gtdbtk bacterial genomes (bins) classification                 |
+| gtdbtk_output/gtdbtk.bac120.filtered.tsv           | a list of genomes with an insufficient number of amino acids in MSA                 |
+| gtdbtk_output/gtdbtk.bac120.msa.fasta              | the MSA of the user genomes (bins) and the GTDB genomes                             |
+| gtdbtk_output/gtdbtk.bac120.user_msa.fasta         | the MSA of the user genomes (bins) only                                             |
+| gtdbtk_output/gtdbtk.translation_table_summary.tsv | the translation table determined for each sgenome (bins)                            |
+| gtdbtk_output/gtdbtk.warnings.log                  | gtdbtk warning message log                                                          |
+| mbin-2021-01-31.sqlite                             | sqlite db file stores MAGs metadata and statistics                                  |
+| mbin-nmdc.20210131.log                             | the mbin-nmdc pipeline run log file                                                 |
+| rc                                                 | cromwell script sbumit return code                                                  |
+| script                                             | Task run commands                                                                   |
+| script.background                                  | Bash script to run script.submit                                                    |
+| script.submit                                      | cromwell submit commands                                                            |
+| stderr                                             | standard error where task writes error message to                                   |
+| stderr.background                                  | standard error where bash script writes error message to                            |
+| stdout                                             | standard output where task writes error message to                                  |
+| stdout.background                                  | standard output where bash script writes error message to                           |
+| complete.mbin                                      | the dummy file to indicate the finish of the pipeline                               |
+
+
 
 ### Version History
 
@@ -1102,7 +1073,7 @@ feature in a GFF file for sense and antisense reads.
 
 ### Workflow Diagram
 
-![Metatranscriptome workflow](../_static/images/6_MetaT_metaT_figure.png)
+![Metatranscriptome workflow](../../_static/images/6_MetaT_metaT_figure.png)
 
 ### Workflow Availability
 
@@ -1225,55 +1196,30 @@ annotation for each feature. An example of JSON outpus:
 Below is an example of the output directory files with descriptions to
 the right.
 
-  : Title
+| Directory/File Name                   | Description                        |
+| ------------------------------------- | ---------------------------------- |
+| metat_output/sense_out.json           | RPKM for each feature on + strand  |
+| metat_output/antisense_out.json       | RPKM for each feature on - strand  |
+| assembly/megahit_assem.contigs.fa     | assembled transcripts              |
+| mapback/mapped_sorted.bam             | alignment of reads and transcripts |
+| qa/_interleaved.fastq                 | non-ribosomal reads                |
+| qa/filterStats.txt                    | summary statistics in JSON format  |
+| qa/filterStats2.txt                   | more detailed summary statistics   |
+| annotation/annotations.json           | annotation information             |
+| annotation/features.json              | feature information                |
+| annotation/_cath_funfam.gff           | features from cath database        |
+| annotation/_cog.gff                   | features from cog databse          |
+| annotation/_ko_ec.gff                 | features from ko database          |
+| annotation/_pfam.gff                  | features from pfam database        |
+| annotation/_smart.gff                 | features from smart database       |
+| annotation/_structural_annotation.gff | structural features                |
+| annotation/_supfam.gff                | features from supfam databse       |
+| annotation/_tigrfam.gff               | features from trigfam database     |
+| annotation/_functional_annotation.gff | functional features                |
+| annotation/_ec.tsv                    | ec terms tsv                       |
+| annotation/_ko.tsv                    | ko terms tsv                       |
+| annotation/proteins.faa               | fasta containing protiens          |
 
-  ----------------------------------------------------------------------------------------
-  Directory/File Name                      Description
-  ---------------------------------------- -----------------------------------------------
-  metat_output/sense_out.json              RPKM for each feature on + strand
-
-  metat_output/antisense_out.json          RPKM for each feature on - strand
-
-  assembly/megahit_assem.contigs.fa        assembled transcripts
-
-  mapback/mapped_sorted.bam                alignment of reads and transcripts
-
-  qa/\_interleaved.fastq                   non-ribosomal reads
-
-  qa/filterStats.txt                       summary statistics in JSON format
-
-  qa/filterStats2.txt                      more detailed summary statistics
-
-  annotation/annotations.json              annotation information
-
-  annotation/features.json                 feature information
-
-  annotation/\_cath_funfam.gff             features from cath database
-
-  annotation/\_cog.gff                     features from cog databse
-
-  annotation/\_ko_ec.gff                   features from ko database
-
-  annotation/\_pfam.gff                    features from pfam database
-
-  annotation/\_smart.gff                   features from smart database
-
-  annotation/\_structural_annotation.gff   structural features
-
-  annotation/\_supfam.gff                  features from supfam databse
-
-  annotation/\_tigrfam.gff                 features from trigfam database
-
-  annotation/\_functional_annotation.gff   functional features
-
-  annotation/\_ec.tsv                      ec terms tsv
-
-  annotation/\_ko.tsv                      ko terms tsv
-
-  annotation/proteins.faa                  fasta containing protiens
-  ----------------------------------------------------------------------------------------
-
-  : Title
 
 ### Version History
 
@@ -1351,7 +1297,7 @@ with protein information.
 
 ### Workflow Diagram
 
-![image](../_static/images/7_Metaproteomics_detailed_workflow_diagram.png)
+![image](../../_static/images/7_Metaproteomics_detailed_workflow_diagram.png)
 
 ### Workflow Dependencies
 
@@ -1374,15 +1320,11 @@ The workflow is available in GitHub:
 
 #### Inputs
 
--   [.raw]{.title-ref}, [metagenome]{.title-ref}, [parameter files :
-    MSGFplus & MASIC]{.title-ref}, [contaminant_file]{.title-ref}
+-   .raw, metagenome, parameter files : MSGFplus & MASIC, contaminant_file
 
 #### Outputs
 
 1.  Processing multiple datasets.
-
-``` bash
-```
 
 2.  Processing single FICUS dataset.
 
@@ -1468,7 +1410,7 @@ filtering, all in a single step.
 
 ### Workflow Diagram
 
-![image](../_static/images/8_Metabolomics_metamsworkflow.png)
+![image](../../_static/images/8_Metabolomics_metamsworkflow.png)
 
 ### Workflow Dependencies
 
@@ -1505,42 +1447,27 @@ Please refer to:
 
 <https://github.com/microbiomedata/metaMS#metams-installation>
 
-#### Inputs
+### Inputs
 
--   
+- ***Supported format for low resolution GC-MS data:***
+    -   ANDI NetCDF for GC-MS (.cdf)
 
-    Supported format for low resolution GC-MS data:
+- ***Fatty Acid Methyl Esters Calibration File:***
+    -   ANDI NetCDF for GC-MS (.cdf) - C8 to C30
 
-    :   -   ANDI NetCDF for GC-MS (.cdf)
+- ***Parameters:***
+    -   CoreMS Parameter File (.json)
+    -   MetaMS Parameter File (.json)
 
--   
+### Outputs
 
-    Fatty Acid Methyl Esters Calibration File:
+- ***Metabolites data-table***
+    -   CSV, TAB-SEPARATED TXT
+    -   HDF: CoreMS HDF5 format
+    -   XLSX : Microsoft Excel
 
-    :   -   ANDI NetCDF for GC-MS (.cdf) - C8 to C30
-
--   
-
-    Parameters:
-
-    :   -   CoreMS Parameter File (.json)
-        -   MetaMS Parameter File (.json)
-
-#### Outputs
-
--   
-
-    Metabolites data-table
-
-    :   -   CSV, TAB-SEPARATED TXT
-        -   HDF: CoreMS HDF5 format
-        -   XLSX : Microsoft Excel
-
--   
-
-    Workflow Metadata:
-
-    :   -   JSON
+- ***Workflow Metadata:***
+    -   JSON
 
 ### Requirements for Execution
 
@@ -1577,7 +1504,7 @@ and the best candidate assigned as the highest score.
 
 ### Workflow Diagram
 
-![image](../_static/images/9_NOM_enviromsworkflow.png)
+![image](../../_static/images/9_NOM_enviromsworkflow.png)
 
 ### Workflow Dependencies
 
@@ -1614,45 +1541,30 @@ Please refer to:
 
 <https://github.com/microbiomedata/enviroMS#enviroms-installation>
 
-#### Inputs
+### Inputs
 
--   
-
-    Supported format for Direct Infusion FT-MS data:
-
-    :   -   Thermo raw file (.raw)
-        -   Bruker raw file (.d)
-        -   Generic mass list in profile and/or centroid mode (inclusive
+- ***Supported format for Direct Infusion FT-MS data:***
+    -   Thermo raw file (.raw)
+    -   Bruker raw file (.d)
+    -   Generic mass list in profile and/or centroid mode (inclusive
             of all delimiters types and Excel formats)
 
--   
+- ***Calibration File:***
+    -   Molecular Formula Reference (.ref)
 
-    Calibration File:
+-  ***Parameters:***
+    -   CoreMS Parameter File (.json)
+    -   EnviroMS Parameter File (.json)
 
-    :   -   Molecular Formula Reference (.ref)
+### Outputs
 
--   
+-  ***Molecular Formula Data-Table, containing m/z measuments, Peak height, Peak Area, Molecular Formula Identification, Ion Type, Confidence Score, etc.***
+    -   CSV, TAB-SEPARATED TXT
+    -   HDF: CoreMS HDF5 format
+    -   XLSX : Microsoft Excel
 
-    Parameters:
-
-    :   -   CoreMS Parameter File (.json)
-        -   EnviroMS Parameter File (.json)
-
-#### Outputs
-
--   
-
-    Molecular Formula Data-Table, containing m/z measuments, Peak height, Peak Area, Molecular Formula Identification, Ion Type, Confidence Score, etc.
-
-    :   -   CSV, TAB-SEPARATED TXT
-        -   HDF: CoreMS HDF5 format
-        -   XLSX : Microsoft Excel
-
--   
-
-    Workflow Metadata:
-
-    :   -   JSON
+- ***Workflow Metadata:***
+    -   JSON
 
 ### Requirements for Execution
 
