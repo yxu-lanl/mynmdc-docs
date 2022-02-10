@@ -1,6 +1,4 @@
----
-title: The NMDC Metadata Standards Documentation
----
+# The NMDC Metadata Standards Documentation
 
 # Introduction
 
@@ -14,9 +12,7 @@ types of metadata (Figure 1), we recommend you begin with an
 to Know About Metadata and Ontologies (But Were Afraid to Ask)*
 (<https://doi.org/10.25979/1607365>).
 
-::: container
-    <img src="../../images/NMDC_metadata_img1.png" style="width:80%"/>
-:::
+![image](../../_static/images/NMDC_metadata_img1.png)
 
 Figure 1: Microbiome metadata types: Information that contextualizes
 sample including its geographic location and collection date, sample
@@ -106,9 +102,6 @@ using a five-level ecosystem classification [path (Figure
 2)](https://pubmed.ncbi.nlm.nih.gov/20653767/); the NMDC schema also
 uses this ecosystem classification to describe sample environments.
 
-::: container
-:::
-
 Figure 2. The GOLD five-level ecosystem classification paths ([Mukherjee
 2019](https://pubmed.ncbi.nlm.nih.gov/33152092/)).
 
@@ -181,29 +174,8 @@ classification*
 Review a step-by-step example of how to assign EnvO terms to an
 oligotrophic lake sediment sample below.
 
-```{=html}
-<table>
-```
-```{=html}
-<tbody>
-```
-```{=html}
-<tr class="odd">
-```
-```{=html}
-<td width="35%" valign="top">
-```
-```{=html}
-<p>
-```
 env_broad_scale (Biome)
 
-```{=html}
-</p>
-```
-```{=html}
-<p>
-```
 Using EnvO biome categories, aquatic is appropriate. However, since the
 EnvO is a hierarchical system, the aquatic biome has two sub-categories:
 freshwater and marine biomes. The freshwater biome is further divided
@@ -211,102 +183,21 @@ into freshwater lake biome and freshwater river biome. Therefore, for a
 lake sediment sample, freshwater lake biome is the appropriate EnvO
 biome category.
 
-```{=html}
-</p>
-```
-```{=html}
-</td>
-```
-```{=html}
-<td>
-```
-```{=html}
-</td>
-```
-```{=html}
-</tr>
-```
-```{=html}
-<tr class="even">
-```
-```{=html}
-<td valign="top">
-```
-```{=html}
-<p>
-```
 env_local_scale (Feature)
 
-```{=html}
-</p>
-```
-```{=html}
-<p>
-```
 Next, we describe the local environmental feature in the vicinity of and
 likely having a strong causal influence on the sample. Using the EnvO
 astronomical body part categories, we step through the relevant
 categories (see figure on the right) until we reach the EnvO term
 oligotrophic lake.
 
-```{=html}
-</p>
-```
-```{=html}
-</td>
-```
-```{=html}
-<td>
-```
-```{=html}
-</td>
-```
-```{=html}
-</tr>
-```
-```{=html}
-<tr class="odd">
-```
-```{=html}
-<td valign="top">
-```
-```{=html}
-<p>
-```
 env_medium (Material)
 
-```{=html}
-</p>
-```
-```{=html}
-<p>
-```
 Finally, since the sample is oligotrophic lake sediment, the EnvO
 environmental material could be assigned sediment. But because the EnvO
 hierarchy provides sub-categories within sediment, the environmenta
 material will be assigned lake sediment.
 
-```{=html}
-</p>
-```
-```{=html}
-</td>
-```
-```{=html}
-<td>
-```
-```{=html}
-</td>
-```
-```{=html}
-</tr>
-```
-```{=html}
-</tbody>
-```
-```{=html}
-</table>
-```
 Therefore, the EnvO triad for *oligotrophic lake sediment* is:
 
 > **Env_broad_scale**: freshwater lake biome \[ENVO_01000252\]
@@ -328,9 +219,7 @@ site, identifier, ecosystem classification path, and study description.
 The NMDC team is currently working on exploring solutions for automated
 mapping between GOLD and MIxS/EnvO.
 
-::: container
-    <img src="../../images/NMDC_metadata_img6.png" style="width:80%" />
-:::
+![image](../../_static/images/NMDC_metadata_img6.png)
 
 Figure 3: Mapping between the MIxS/EnvO triad and the GOLD ecosystem
 classification enables integration of sample environments defined with
@@ -393,28 +282,28 @@ name, definition, section of the MIxS package, expected value, value
 syntax for all of the descriptors and preferred unit and example value
 when available are listed below.
 
--   | investigation_type - Nucleic Acid Sequence Report is the root
+-   investigation_type - Nucleic Acid Sequence Report is the root
       element of all MIGS/MIMS compliant reports as standardized by
       Genomic Standards Consortium. This field is either
       eukaryote,bacteria,virus,plasmid,organelle,
       metagenome,mimarks-survey, mimarks-specimen, metatranscriptome,
       single amplified genome, metagenome-assembled genome, or
       uncultivated viral genome.
-    | Section : investigation
-    | Expected value : eukaryote, bacteria_archaea, plasmid, virus,
+    <br> Section : investigation
+    <br> Expected value : eukaryote, bacteria_archaea, plasmid, virus,
       organelle, metagenome,mimarks-survey, mimarks-specimen,
       metatranscriptome, single amplified genome, metagenome-assembled
       genome, or uncultivated viral genomes
-    | Value syntax :
+    <br> Value syntax :
       \[eukaryoteplasmidorganellemetatranscriptomemimarks-specimenmimag\|miuvig\]
-    | Example : metagenome
+    <br> Example : metagenome
 
 -   project_name - Name of the project within which the sequencing was
     organized.
 
-    | Section : investigation
-    | Expected value :
-    | Value syntax : {text}
+    <br> Section : investigation
+    <br> Expected value :
+    <br> Value syntax : {text}
 
     The project name in the NMDC follows standardized metagenome naming
     scheme as per the Genomes Online Database (GOLD) that can be
@@ -446,36 +335,36 @@ when available are listed below.
     Metatranscriptome of permafrost microbial communities from Stordalen
     mire, Sweden - 20120800_S1X
 
--   | lat_lon - The geographical origin of the sample as defined by
+-   lat_lon - The geographical origin of the sample as defined by
       latitude and longitude. The values should be reported in decimal
       degrees and in WGS84 system.
-    | Section : environment
-    | Expected value : decimal degrees
-    | Value syntax : {float} {float}
-    | Example : 50.586825 6.408977
+    <br> Section : environment
+    <br> Expected value : decimal degrees
+    <br> Value syntax : {float} {float}
+    <br> Example : 50.586825 6.408977
 
--   | geo_loc_name - The geographical origin of the sample as defined by
+-   geo_loc_name - The geographical origin of the sample as defined by
       the country or sea name followed by specific region name. Country
       or sea names should be chosen from the INSDC country list
       (<http://insdc.org/country.html>), or the GAZ ontology that can be
       accessed from <http://www.ontobee.org/ontology/GAZ> or
       <http://purl.bioontology.org/ontology/GAZ>.
-    | Section : environment
-    | Expected value : country or sea name (INSDC or
+    <br> Section : environment
+    <br> Expected value : country or sea name (INSDC or
       GAZ);region(GAZ);specific location name
-    | Value syntax : {term};{term};{text}
-    | Example : Germany;North Rhine-Westphalia;Eifel National Park
+    <br> Value syntax : {term};{term};{text}
+    <br> Example : Germany;North Rhine-Westphalia;Eifel National Park
 
--   | collection_date - The time of sampling, either as an instance
+-   collection_date - The time of sampling, either as an instance
       (single point in time) or interval. In case no exact time is
       available, the date/time can be right truncated i.e. all of these
       are valid times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10;
       2008-01-23; 2008-01; 2008; Except: 2008-01; 2008 all are ISO8601
       compliant.
-    | Section : environment
-    | Expected value : date and time
-    | Value syntax : {timestamp}
-    | Example : 2018-05-11T10:00:00+01:00
+    <br> Section : environment
+    <br> Expected value : date and time
+    <br> Value syntax : {timestamp}
+    <br> Example : 2018-05-11T10:00:00+01:00
 
 -   env_broad_scale - The broad-scale environmental context of MIxS uses
     terminologies from Environment Ontology (EnvO). EnvO describes the
@@ -499,15 +388,15 @@ when available are listed below.
     We recommend using subclasses of ENVO's biome class: Biome class
     represents <http://purl.obolibrary.org/obo/ENVO_00000428>.
 
-    | Section : environment
-    | Expected value : Add terms that identify the major environment
+    <br> Section : environment
+    <br> Expected value : Add terms that identify the major environment
       type(s) where your sample was collected. Recommend subclasses of
       biome \[ENVO:00000428\]. Format for single term: termLabel
       \[termID\],Format for multiple terms: termLabel
       \[termID\]termLabel \[termID\].
 
-    | Value syntax : {termLabel} {\[termID\]}
-    | Example:
+    <br> Value syntax : {termLabel} {\[termID\]}
+    <br> Example:
 
     annotating soil from permafrost: terrestrial biome \[ENVO_00000446\]
     or
@@ -532,8 +421,8 @@ when available are listed below.
     If needed, request new terms on the ENVO tracker, identified here:
     <http://www.obofoundry.org/ontology/envo.html>.
 
-    | Section : environment
-    | Expected value : Add terms that identify environmental entities
+    <br> Section : environment
+    <br> Expected value : Add terms that identify environmental entities
       having causal influences upon the entity at time of sampling.
       Format for single term: termLabel \[termID\]; Format for multiple
       terms: termLabel \[termID\]termLabel \[termID\].
@@ -570,8 +459,8 @@ when available are listed below.
     environmental material class:
     <http://purl.obolibrary.org/obo/ENVO_00010483>.
 
-    | Section : environment
-    | Expected value : Add terms that identify the material displaced by
+    <br> Section : environment
+    <br> Expected value : Add terms that identify the material displaced by
       the entity at time of sampling. Recommend subclasses of
       environmental material \[ENVO:00010483\]. Multiple terms can be
       separated by pipes e.g.: estuarine water
@@ -580,8 +469,8 @@ when available are listed below.
 
     Format (multiple terms): termLabel \[termID\]termLabel \[termID\].
 
-    | Value syntax : {termLabel} {\[termID\]}
-    | Example:
+    <br> Value syntax : {termLabel} {\[termID\]}
+    <br> Example:
 
     Annotating env_medium (environmental medium context terms) of meadow
     soil: meadow soil \[ENVO_00005761\].
@@ -589,51 +478,51 @@ when available are listed below.
     When there are multiple terms, agricultural soil
     \[ENVO_00002259\]oil contaminated soil \[ENVO_00002875\]
 
--   | depth - Depth is defined as the vertical distance below local
+-   depth - Depth is defined as the vertical distance below local
       surface, e.g. For sediment or soil samples depth is measured from
       sediment or soil surface, respectively. Depth can be reported as
       an interval for subsurface samples.
-    | Section : soil
-    | Expected value : measurement value
-    | Preferred unit : meter
-    | Value syntax : {float} {unit}
-    | Example : 10 meter
+    <br> Section : soil
+    <br> Expected value : measurement value
+    <br> Preferred unit : meter
+    <br> Value syntax : {float} {unit}
+    <br> Example : 10 meter
 
--   | elev - Elevation of the sampling site is its height above a fixed
+-   elev - Elevation of the sampling site is its height above a fixed
       reference point, most commonly the mean sea level. Elevation is
       mainly used when referring to points on the earth's surface, while
       altitude is used for points above the surface, such as an aircraft
       in flight or a spacecraft in orbit.
-    | Section : soil
-    | Expected value : measurement value
-    | Preferred unit : meter
-    | Value syntax : {float} {unit}
-    | Example : 100 meter
+    <br> Section : soil
+    <br> Expected value : measurement value
+    <br> Preferred unit : meter
+    <br> Value syntax : {float} {unit}
+    <br> Example : 100 meter
 
--   | submitted_to_insdc - Depending on the study (large-scale e.g. done
+-   submitted_to_insdc - Depending on the study (large-scale e.g. done
       with next generation sequencing technology, or small-scale)
       sequences have to be submitted to SRA (Sequence Read Archive), DRA
       (DDBJ Read Archive) or via the classical Webin/Sequin systems to
       Genbank, ENA and DDBJ. Although this field is mandatory, it is
       meant as a self-test field, therefore it is not necessary to
       include this field in contextual data submitted to databases.
-    | Section : investigation
-    | Expected value : boolean
-    | Value syntax : {boolean}
-    | Example : yes
+    <br> Section : investigation
+    <br> Expected value : boolean
+    <br> Value syntax : {boolean}
+    <br> Example : yes
 
--   | seq_meth - Sequencing method used; e.g. Sanger, pyrosequencing,
+-   seq_meth - Sequencing method used; e.g. Sanger, pyrosequencing,
       ABI-solid.
-    | Section : sequencing
-    | Expected value : enumeration
-    | Value syntax : \[MinIONPromethION454 GS 20454 GS FLX+454 GS
+    <br> Section : sequencing
+    <br> Expected value : enumeration
+    <br> Value syntax : \[MinIONPromethION454 GS 20454 GS FLX+454 GS
       JuniorIllumina Genome Analyzer IIIllumina HiSeq 4000Illumina HiSeq
       2500Illumina HiSeq 1500Illumina HiScanSQIllumina HiSeq X
       FiveIllumina NextSeq 500AB SOLiD SystemAB SOLiD System 3.0AB SOLiD
       4 SystemAB SOLiD PI SystemAB 5500xl Genetic AnalyzerIon Torrent
       PGMIon Torrent S5PacBio RSSequelAB 3730 Genetic AnalyzerAB 3500
       Genetic AnalyzerAB 3130 Genetic AnalyzerBGISEQ-500\]
-    | Example : Illumina HiSeq 1500
+    <br> Example : Illumina HiSeq 1500
 
 ## **Unique descriptors (46) in MIxS Soil package**
 
@@ -642,52 +531,52 @@ MIxS packages. Name, definition, section of the MIxS package, expected
 value, value syntax for all of these descriptors and preferred unit and
 example value when available are listed below.
 
--   | agrochem_addition - Addition of fertilizers, pesticides, etc. -
+-   agrochem_addition - Addition of fertilizers, pesticides, etc. -
       amount and time of applications.
-    | Section : soil
-    | Expected value : agrochemical name;agrochemical amount;timestamp
-    | Preferred unit : gram, mole per liter, milligram per liter
-    | Value syntax : {text};{float} {unit};{timestamp}
-    | Example : roundup;5 milligram per liter;2018-06-21
+    <br> Section : soil
+    <br> Expected value : agrochemical name;agrochemical amount;timestamp
+    <br> Preferred unit : gram, mole per liter, milligram per liter
+    <br> Value syntax : {text};{float} {unit};{timestamp}
+    <br> Example : roundup;5 milligram per liter;2018-06-21
 
--   | al_sat - Aluminum saturation (esp. For tropical soils).
-    | Section : soil
-    | Expected value : measurement value
-    | Preferred unit : percentage
-    | Value syntax : {float} {unit}
+-   al_sat - Aluminum saturation (esp. For tropical soils).
+    <br> Section : soil
+    <br> Expected value : measurement value
+    <br> Preferred unit : percentage
+    <br> Value syntax : {float} {unit}
 
--   | al_sat_meth - Reference or method used in determining Al
+-   al_sat_meth - Reference or method used in determining Al
       saturation.
-    | Section : soil
-    | Expected value : PMID,DOI or URL
-    | Value syntax : {PMID}{URL}
+    <br> Section : soil
+    <br> Expected value : PMID,DOI or URL
+    <br> Value syntax : {PMID}{URL}
 
--   | annual_precpt - The average of all annual precipitation values
+-   annual_precpt - The average of all annual precipitation values
       known, or an estimated equivalent value derived by such methods as
       regional indexes or Isohyetal maps. .
-    | Section : soil
-    | Expected value : measurement value
-    | Preferred unit : millimeter
-    | Value syntax : {float} {unit}
+    <br> Section : soil
+    <br> Expected value : measurement value
+    <br> Preferred unit : millimeter
+    <br> Value syntax : {float} {unit}
 
--   | annual_temp - Mean annual temperature.
-    | Section : soil
-    | Expected value : measurement value
-    | Preferred unit : degree Celsius
-    | Value syntax : {float} {unit}
-    | Example : 12.5 degree Celsius
+-   annual_temp - Mean annual temperature.
+    <br> Section : soil
+    <br> Expected value : measurement value
+    <br> Preferred unit : degree Celsius
+    <br> Value syntax : {float} {unit}
+    <br> Example : 12.5 degree Celsius
 
--   | crop_rotation - Whether or not crop is rotated, and if yes,
+-   crop_rotation - Whether or not crop is rotated, and if yes,
       rotation schedule.
-    | Section : soil
-    | Expected value : crop rotation status;schedule
-    | Value syntax : {boolean};{Rn/start_time/end_time/duration}
-    | Example : yes;R2/2017-01-01/2018-12-31/P6M
+    <br> Section : soil
+    <br> Expected value : crop rotation status;schedule
+    <br> Value syntax : {boolean};{Rn/start_time/end_time/duration}
+    <br> Example : yes;R2/2017-01-01/2018-12-31/P6M
 
--   | cur_land_use - Present state of sample site.
-    | Section : soil
-    | Expected value : enumeration
-    | Value syntax : \[citiesindustrial areasrockgravelsalt
+-   cur_land_use - Present state of sample site.
+    <br> Section : soil
+    <br> Expected value : enumeration
+    <br> Value syntax : \[citiesindustrial areasrockgravelsalt
       flatspermanent snow or icemines/quarriessmall grainsvegetable
       cropsmarshlands (grass,sedges,rushes)rangelandhaylandshrub land
       (e.g. mesquite,sage-brush,creosote bush,shrub oak,eucalyptus)shrub
@@ -695,263 +584,263 @@ example value when available are listed below.
       pine,spruce,fir,cypress)intermixed hardwood and conifersrainforest
       (evergreen forest receiving \>406 cm annual rainfall)crop trees
       (nuts,fruit,christmas trees,nursery trees)\]
-    | Example : conifers
+    <br> Example : conifers
 
--   | cur_vegetation - Vegetation classification from one or more
+-   cur_vegetation - Vegetation classification from one or more
       standard classification systems, or agricultural crop.
-    | Section : soil
-    | Expected value : current vegetation type
-    | Value syntax : {text}
+    <br> Section : soil
+    <br> Expected value : current vegetation type
+    <br> Value syntax : {text}
 
--   | cur_vegetation_meth - Reference or method used in vegetation
+-   cur_vegetation_meth - Reference or method used in vegetation
       classification .
-    | Section : soil
-    | Expected value : PMID,DOI or url
-    | Value syntax : {PMID}{URL}
+    <br> Section : soil
+    <br> Expected value : PMID,DOI or url
+    <br> Value syntax : {PMID}{URL}
 
--   | drainage_class - Drainage classification from a standard system
+-   drainage_class - Drainage classification from a standard system
       such as the USDA system.
-    | Section : soil
-    | Expected value : enumeration
-    | Value syntax : \[very poorlysomewhat poorlywell\|excessively
+    <br> Section : soil
+    <br> Expected value : enumeration
+    <br> Value syntax : \[very poorlysomewhat poorlywell\|excessively
       drained\]
-    | Example : well
+    <br> Example : well
 
--   | extreme_event - Unusual physical events that may have affected
+-   extreme_event - Unusual physical events that may have affected
       microbial populations.
-    | Section : soil
-    | Expected value : date
-    | Value syntax : {timestamp}
+    <br> Section : soil
+    <br> Expected value : date
+    <br> Value syntax : {timestamp}
 
--   | extreme_salinity - Measured salinity .
-    | Section : soil
-    | Expected value : measurement value
-    | Preferred unit : millisiemens per meter
-    | Value syntax : {float} {unit}
+-   extreme_salinity - Measured salinity .
+    <br> Section : soil
+    <br> Expected value : measurement value
+    <br> Preferred unit : millisiemens per meter
+    <br> Value syntax : {float} {unit}
 
--   | fao_class - Soil classification from the FAO World Reference
+-   fao_class - Soil classification from the FAO World Reference
       Database for Soil Resources. The list can be found at
       <http://www.fao.org/nr/land/sols/soil/wrb-soil-maps/reference-groups>.
-    | Section : soil
-    | Expected value : enumeration
-    | Value syntax :
+    <br> Section : soil
+    <br> Expected value : enumeration
+    <br> Value syntax :
       \[AcrisolsArenosolsChernozemsFluvisolsGreyzemsHistosolsLithosolsNitosolsPlanosolsPodzoluvisolsRegosolsSolonchaksVertisols\|Yermosols\]
-    | Example : Luvisols
+    <br> Example : Luvisols
 
--   | fire - Historical and/or physical evidence of fire.
-    | Section : soil
-    | Expected value : date
-    | Value syntax : {timestamp}
+-   fire - Historical and/or physical evidence of fire.
+    <br> Section : soil
+    <br> Expected value : date
+    <br> Value syntax : {timestamp}
 
--   | flooding - Historical and/or physical evidence of flooding.
-    | Section : soil
-    | Expected value : date
-    | Value syntax : {timestamp}
+-   flooding - Historical and/or physical evidence of flooding.
+    <br> Section : soil
+    <br> Expected value : date
+    <br> Value syntax : {timestamp}
 
--   | heavy_metals - Heavy metals present and concentrations any drug
+-   heavy_metals - Heavy metals present and concentrations any drug
       used by subject and the frequency of usage; can include multiple
       heavy metals and concentrations.
-    | Section : soil
-    | Expected value : heavy metal name;measurement value
-    | Preferred unit : microgram per gram
-    | Value syntax : {text};{float} {unit}
+    <br> Section : soil
+    <br> Expected value : heavy metal name;measurement value
+    <br> Preferred unit : microgram per gram
+    <br> Value syntax : {text};{float} {unit}
 
--   | heavy_metals_meth - Reference or method used in determining heavy
+-   heavy_metals_meth - Reference or method used in determining heavy
       metals.
-    | Section : soil
-    | Expected value : PMID,DOI or url
-    | Value syntax : {PMID}{URL}
+    <br> Section : soil
+    <br> Expected value : PMID,DOI or url
+    <br> Value syntax : {PMID}{URL}
 
--   | horizon - Specific layer in the land area which measures parallel
+-   horizon - Specific layer in the land area which measures parallel
       to the soil surface and possesses physical characteristics which
       differ from the layers above and beneath.
-    | Section : soil
-    | Expected value : enumeration
-    | Value syntax : \[O horizonE horizonC horizonPermafrost\]
-    | Example : A horizon
+    <br> Section : soil
+    <br> Expected value : enumeration
+    <br> Value syntax : \[O horizonE horizonC horizonPermafrost\]
+    <br> Example : A horizon
 
--   | horizon_meth - Reference or method used in determining the
+-   horizon_meth - Reference or method used in determining the
       horizon.
-    | Section : soil
-    | Expected value : PMID,DOI or url
-    | Value syntax : {PMID}{URL}
+    <br> Section : soil
+    <br> Expected value : PMID,DOI or url
+    <br> Value syntax : {PMID}{URL}
 
--   | link_addit_analys - Link to additional analysis results performed
+-   link_addit_analys - Link to additional analysis results performed
       on the sample.
-    | Section : soil
-    | Expected value : PMID,DOI or url
-    | Value syntax : {PMID}{URL}
+    <br> Section : soil
+    <br> Expected value : PMID,DOI or url
+    <br> Value syntax : {PMID}{URL}
 
--   | link_class_info - Link to digitized soil maps or other soil
+-   link_class_info - Link to digitized soil maps or other soil
       classification information.
-    | Section : soil
-    | Expected value : PMID,DOI or url
-    | Value syntax : {PMID}{URL}
+    <br> Section : soil
+    <br> Expected value : PMID,DOI or url
+    <br> Value syntax : {PMID}{URL}
 
--   | link_climate_info - Link to climate resource.
-    | Section : soil
-    | Expected value : PMID,DOI or url
-    | Value syntax : {PMID}{URL}
+-   link_climate_info - Link to climate resource.
+    <br> Section : soil
+    <br> Expected value : PMID,DOI or url
+    <br> Value syntax : {PMID}{URL}
 
--   | local_class - Soil classification based on local soil
+-   local_class - Soil classification based on local soil
       classification system.
-    | Section : soil
-    | Expected value : local classification name
-    | Value syntax : {text}
+    <br> Section : soil
+    <br> Expected value : local classification name
+    <br> Value syntax : {text}
 
--   | local_class_meth - Reference or method used in determining the
+-   local_class_meth - Reference or method used in determining the
       local soil classification .
-    | Section : soil
-    | Expected value : PMID,DOI or url
-    | Value syntax : {PMID}{URL}
+    <br> Section : soil
+    <br> Expected value : PMID,DOI or url
+    <br> Value syntax : {PMID}{URL}
 
--   | microbial_biomass - The part of the organic matter in the soil
+-   microbial_biomass - The part of the organic matter in the soil
       that constitutes living microorganisms smaller than 5-10
       micrometer. If you keep this, you would need to have correction
       factors used for conversion to the final units.
-    | Section : soil
-    | Expected value : measurement value
-    | Preferred unit : ton, kilogram, gram per kilogram soil
-    | Value syntax : {float} {unit}
+    <br> Section : soil
+    <br> Expected value : measurement value
+    <br> Preferred unit : ton, kilogram, gram per kilogram soil
+    <br> Value syntax : {float} {unit}
 
--   | microbial_biomass_meth - Reference or method used in determining
+-   microbial_biomass_meth - Reference or method used in determining
       microbial biomass.
-    | Section : soil
-    | Expected value : PMID,DOI or url
-    | Value syntax : {PMID}{URL}
+    <br> Section : soil
+    <br> Expected value : PMID,DOI or url
+    <br> Value syntax : {PMID}{URL}
 
--   | ph_meth - Reference or method used in determining ph.
-    | Section : soil
-    | Expected value : PMID,DOI or url
-    | Value syntax : {PMID}{URL}
+-   ph_meth - Reference or method used in determining ph.
+    <br> Section : soil
+    <br> Expected value : PMID,DOI or url
+    <br> Value syntax : {PMID}{URL}
 
--   | pool_dna_extracts - Indicate whether multiple DNA extractions were
+-   pool_dna_extracts - Indicate whether multiple DNA extractions were
       mixed. If the answer yes, the number of extracts that were pooled
       should be given.
-    | Section : soil
-    | Expected value : pooling status;number of pooled extracts
-    | Value syntax : {boolean};{integer}
-    | Example : yes;5
+    <br> Section : soil
+    <br> Expected value : pooling status;number of pooled extracts
+    <br> Value syntax : {boolean};{integer}
+    <br> Example : yes;5
 
--   | previous_land_use - Previous land use and dates.
-    | Section : soil
-    | Expected value : land use name;date
-    | Value syntax : {text};{timestamp}
+-   previous_land_use - Previous land use and dates.
+    <br> Section : soil
+    <br> Expected value : land use name;date
+    <br> Value syntax : {text};{timestamp}
 
--   | previous_land_use_meth - Reference or method used in determining
+-   previous_land_use_meth - Reference or method used in determining
       previous land use and dates.
-    | Section : soil
-    | Expected value : PMID,DOI or url
-    | Value syntax : {PMID}{URL}
+    <br> Section : soil
+    <br> Expected value : PMID,DOI or url
+    <br> Value syntax : {PMID}{URL}
 
--   | profile_position - Cross-sectional position in the hillslope where
+-   profile_position - Cross-sectional position in the hillslope where
       sample was collected.sample area position in relation to
       surrounding areas.
-    | Section : soil
-    | Expected value : enumeration
-    | Value syntax : \[summitbackslopetoeslope\]
-    | Example : summit
+    <br> Section : soil
+    <br> Expected value : enumeration
+    <br> Value syntax : \[summitbackslopetoeslope\]
+    <br> Example : summit
 
--   | salinity_meth - Reference or method used in determining salinity.
-    | Section : soil
-    | Expected value : PMID,DOI or url
-    | Value syntax : {PMID}{URL}
+-   salinity_meth - Reference or method used in determining salinity.
+    <br> Section : soil
+    <br> Expected value : PMID,DOI or url
+    <br> Value syntax : {PMID}{URL}
 
--   | season_precpt - The average of all seasonal precipitation values
+-   season_precpt - The average of all seasonal precipitation values
       known, or an estimated equivalent value derived by such methods as
       regional indexes or Isohyetal maps. .
-    | Section : soil
-    | Expected value : measurement value
-    | Preferred unit : millimeter
-    | Value syntax : {float} {unit}
+    <br> Section : soil
+    <br> Expected value : measurement value
+    <br> Preferred unit : millimeter
+    <br> Value syntax : {float} {unit}
 
--   | season_temp - Mean seasonal temperature.
-    | Section : soil
-    | Expected value : measurement value
-    | Preferred unit : degree Celsius
-    | Value syntax : {float} {unit}
-    | Example : 18 degree Celsius
+-   season_temp - Mean seasonal temperature.
+    <br> Section : soil
+    <br> Expected value : measurement value
+    <br> Preferred unit : degree Celsius
+    <br> Value syntax : {float} {unit}
+    <br> Example : 18 degree Celsius
 
--   | sieving - Collection design of pooled samples and/or sieve size
+-   sieving - Collection design of pooled samples and/or sieve size
       and amount of sample sieved.
-    | Section : soil
-    | Expected value : design name and/or size;amount
-    | Value syntax : {{text}\|{float} {unit}};{float} {unit}
+    <br> Section : soil
+    <br> Expected value : design name and/or size;amount
+    <br> Value syntax : {{text}\|{float} {unit}};{float} {unit}
 
--   | slope_aspect - The direction a slope faces. While looking down a
+-   slope_aspect - The direction a slope faces. While looking down a
       slope use a compass to record the direction you are facing
       (direction or degrees); e.g., nw or 315 degrees. This measure
       provides an indication of sun and wind exposure that will
       influence soil temperature and evapotranspiration.
-    | Section : soil
-    | Expected value : measurement value
-    | Preferred unit : degree
-    | Value syntax : {float} {unit}
+    <br> Section : soil
+    <br> Expected value : measurement value
+    <br> Preferred unit : degree
+    <br> Value syntax : {float} {unit}
 
--   | slope_gradient - Commonly called 'slope'. The angle between ground
+-   slope_gradient - Commonly called 'slope'. The angle between ground
       surface and a horizontal line (in percent). This is the direction
       that overland water would flow. This measure is usually taken with
       a hand level meter or clinometer.
-    | Section : soil
-    | Expected value : measurement value
-    | Preferred unit : percentage
-    | Value syntax : {float} {unit}
+    <br> Section : soil
+    <br> Expected value : measurement value
+    <br> Preferred unit : percentage
+    <br> Value syntax : {float} {unit}
 
--   | soil_type - Soil series name or other lower-level classification.
-    | Section : soil
-    | Expected value : soil type name
-    | Value syntax : {text}
+-   soil_type - Soil series name or other lower-level classification.
+    <br> Section : soil
+    <br> Expected value : soil type name
+    <br> Value syntax : {text}
 
--   | soil_type_meth - Reference or method used in determining soil
+-   soil_type_meth - Reference or method used in determining soil
       series name or other lower-level classification.
-    | Section : soil
-    | Expected value : PMID,DOI or url
-    | Value syntax : {PMID}{URL}
+    <br> Section : soil
+    <br> Expected value : PMID,DOI or url
+    <br> Value syntax : {PMID}{URL}
 
--   | store_cond - Explain how and for how long the soil sample was
+-   store_cond - Explain how and for how long the soil sample was
       stored before DNA extraction.
-    | Section : soil
-    | Expected value : storage condition type;duration
-    | Value syntax : {text};{duration}
-    | Example : -20 degree Celsius freezer;P2Y10D
+    <br> Section : soil
+    <br> Expected value : storage condition type;duration
+    <br> Value syntax : {text};{duration}
+    <br> Example : -20 degree Celsius freezer;P2Y10D
 
--   | texture - The relative proportion of different grain sizes of
+-   texture - The relative proportion of different grain sizes of
       mineral particles in a soil, as described using a standard system;
       express as % sand (50 um to 2 mm), silt (2 um to 50 um), and clay
       (\<2 um) with textural name (e.g., silty clay loam) optional..
-    | Section : soil
-    | Expected value : measurement value
-    | Value syntax : {float} {unit}
+    <br> Section : soil
+    <br> Expected value : measurement value
+    <br> Value syntax : {float} {unit}
 
--   | texture_meth - Reference or method used in determining soil
+-   texture_meth - Reference or method used in determining soil
       texture.
-    | Section : soil
-    | Expected value : PMID,DOI or url
-    | Value syntax : {PMID}{URL}
+    <br> Section : soil
+    <br> Expected value : PMID,DOI or url
+    <br> Value syntax : {PMID}{URL}
 
--   | tillage - Note method(s) used for tilling.
-    | Section : soil
-    | Expected value : enumeration
-    | Value syntax : \[drillridge tillzonal tillagetineddisc plough\]
-    | Example : chisel
+-   tillage - Note method(s) used for tilling.
+    <br> Section : soil
+    <br> Expected value : enumeration
+    <br> Value syntax : \[drillridge tillzonal tillagetineddisc plough\]
+    <br> Example : chisel
 
--   | tot_nitro_content_meth - Reference or method used in determining
+-   tot_nitro_content_meth - Reference or method used in determining
       the total nitrogen.
-    | Section : soil
-    | Expected value : PMID,DOI or url
-    | Value syntax : {PMID}{URL}
+    <br> Section : soil
+    <br> Expected value : PMID,DOI or url
+    <br> Value syntax : {PMID}{URL}
 
--   | tot_org_c\_meth - Reference or method used in determining total
+-   tot_org_c\_meth - Reference or method used in determining total
       organic carbon.
-    | Section : soil
-    | Expected value : PMID,DOI or url
-    | Value syntax : {PMID}{URL}
+    <br> Section : soil
+    <br> Expected value : PMID,DOI or url
+    <br> Value syntax : {PMID}{URL}
 
--   | water_content_soil_meth - Reference or method used in determining
+-   water_content_soil_meth - Reference or method used in determining
       the water content of soil.
-    | Section : soil
-    | Expected value : PMID,DOI or url
-    | Value syntax : {PMID}{URL}
+    <br> Section : soil
+    <br> Expected value : PMID,DOI or url
+    <br> Value syntax : {PMID}{URL}
 
 ## **Other descriptors (non mandatory and non-unique descriptors) from MIxS Soil package**
 
