@@ -1,6 +1,8 @@
-# The NMDC Metadata Standards Documentation
+---
+title: The NMDC Metadata Standards Documentation
+---
 
-## Introduction
+# Introduction
 
 This documentation provides details on the National Microbiome Data
 Collaborative's ([NMDC](http://microbiomedata.org)) approach to sample
@@ -43,11 +45,11 @@ Additional information on the activities by the NMDC Metadata Standards
 team can be found on the NMDC website at:
 <https://microbiomedata.org/metadata/>
 
-## Standards and Ontologies used by the NMDC
+# Standards and Ontologies used by the NMDC
 
-### Sample Metadata
+## Sample Metadata
 
-#### GSC Minimum Information about any (x) Sequence (MIxS)
+### GSC Minimum Information about any (x) Sequence (MIxS)
 
 The GSC has developed standards for describing genomic and metagenomic
 sequences, including the "minimum information about a genome sequence"
@@ -90,7 +92,7 @@ from the GSC MIxS standards.
 -   Learn more about all of the [17 MIxS environmental
     packages](https://gensc.org/mixs)
 
-#### Genomes Online Database (GOLD)
+### Genomes Online Database (GOLD)
 
 The JGI [Genomes OnLine Database](https://gold.jgi.doe.gov/) (GOLD,
 [Mukherjee 2021](https://pubmed.ncbi.nlm.nih.gov/33152092/)) is an
@@ -133,7 +135,7 @@ classification*
     example of how to assign the GOLD ecosystem classification to a lake
     sediment sample.
 
-#### Environmental Ontology (EnvO)
+### Environmental Ontology (EnvO)
 
 The Environment Ontology (EnvO, [Buttigieg
 2016](https://pubmed.ncbi.nlm.nih.gov/27664130/)) is a community-led
@@ -313,7 +315,7 @@ Therefore, the EnvO triad for *oligotrophic lake sediment* is:
 >
 > **Env_medium**: lake sediment \[ENVO_00000546\]
 
-#### Classifying samples with GOLD and MIxS/EnvO
+### Classifying samples with GOLD and MIxS/EnvO
 
 The five-level GOLD ecosystem classification path and EnvO triad each
 have unique advantages in describing the environmental context of a
@@ -334,7 +336,7 @@ Figure 3: Mapping between the MIxS/EnvO triad and the GOLD ecosystem
 classification enables integration of sample environments defined with
 GOLD and MIxS/EnvO.
 
-## Data Processing Metadata
+# Data Processing Metadata
 
 In addition, the NMDC is adopting the MIxS standards for sequence data
 types (e.g., sequencing method, pcr primers and conditions, etc.), and
@@ -346,7 +348,7 @@ to develop standards and controlled vocabularies for mass spectrometry
 data types (e.g., ionization mode, mass resolution, scan rate, etc.).
 *Additional details on the processing metadata are coming soon.*
 
-## Overview of the NMDC Data Schema
+# Overview of the NMDC Data Schema
 
 The NMDC has developed a normalized metadata
 [schema](https://github.com/microbiomedata/nmdc-metadata) (available in
@@ -365,7 +367,7 @@ developed to create ETL (Extract-Transform-Load) software to ingest
 metadata from the DOE User Facilities. Read more about the data in the
 NMDC pilot [here](https://microbiomedata.org/data/).
 
-## MIxS Soil Package
+# MIxS Soil Package
 
 The MIxS Soil Package contains a list of 145 descriptors to describe the
 soil sample taken from various environments including soil from,
@@ -383,7 +385,7 @@ terms:
 
 <https://www.ncbi.nlm.nih.gov/biosample/SAMN08902834>
 
-### **Mandatory descriptors of MIxS Soil packages are:**
+## **Mandatory descriptors of MIxS Soil packages are:**
 
 The MIxS soil package has 12 mandatory descriptors including **'depth'**
 and **'elevation'**. These 12 mandatory descriptors with descriptor
@@ -633,7 +635,7 @@ when available are listed below.
       Genetic AnalyzerAB 3130 Genetic AnalyzerBGISEQ-500\]
     | Example : Illumina HiSeq 1500
 
-### **Unique descriptors (46) in MIxS Soil package**
+## **Unique descriptors (46) in MIxS Soil package**
 
 The MIxS Soil package has 46 unique descriptors when compared with other
 MIxS packages. Name, definition, section of the MIxS package, expected
@@ -951,7 +953,7 @@ example value when available are listed below.
     | Expected value : PMID,DOI or url
     | Value syntax : {PMID}{URL}
 
-### **Other descriptors (non mandatory and non-unique descriptors) from MIxS Soil package**
+## **Other descriptors (non mandatory and non-unique descriptors) from MIxS Soil package**
 
 The MIxS Soil package has 89 descriptors that can also be found/used in
 other MIxS environmental packages. Name, definition, section of the MIxS
@@ -2043,7 +2045,7 @@ preferred unit and example value when available are listed below.
 
     Example : qiagen repli-g
 
-## Identifiers in NMDC
+# Identifiers in NMDC
 
 Identifiers are crucial for the NMDC, both for any data objects
 *created* (aka minted) and for any external objects *referenced*
@@ -2073,7 +2075,7 @@ See [McMurry et al,
 PMID:28662064](https://www.ncbi.nlm.nih.gov/pubmed/28662064) for more
 desiderata.
 
-### CURIEs - prefixed IDs
+## CURIEs - prefixed IDs
 
 Following McMurry et al we adopt the use of *prefixed identifiers*
 
@@ -2097,9 +2099,9 @@ system. These include:
 -   <http://identifiers.org>
 -   <http://obofoundry.org>
 
-### Examples
+## Examples
 
-#### INSDC BioSamples
+### INSDC BioSamples
 
 Registry entry: <https://registry.identifiers.org/registry/biosample>
 
@@ -2110,7 +2112,7 @@ Resolving via identifiers.org:
 
 Resolving via nt2.net: <http://n2t.net/BIOSAMPLE:SAMEA2397676>
 
-#### GOLD identifiers
+### GOLD identifiers
 
 <https://registry.identifiers.org/registry/gold>
 
@@ -2118,7 +2120,7 @@ Example ID: `GOLD:Gp0119849`
 
 Resolving via identifiers.org: <https://identifiers.org/GOLD:Gp0119849>
 
-#### identifiers for ontology terms and function descriptors
+### identifiers for ontology terms and function descriptors
 
 Most of the ontologies we use are in OBO. All OBO IDs are prefixed using
 the ontology ID space. The list of ID spaces can be found on
@@ -2128,7 +2130,7 @@ For example the ID/CURIE `ENVO:00002007` represents the class `sediment`
 and is expanded to a URI of
 <http://purl.obolibrary.org/obo/ENVO_00002007>
 
-### KEGG
+## KEGG
 
 KEGG is actually a set of databases, each with its own prefix, usually
 of form `KEGG.$database`, e.g.
@@ -2138,7 +2140,7 @@ of form `KEGG.$database`, e.g.
 -   [KEGG.COMPOUND](https://registry.identifiers.org/registry/kegg.compound),
     e.g. KEGG.COMPOUND:C12345
 
-### Recommended IDs for use within NMDC
+## Recommended IDs for use within NMDC
 
 The NMDC schema is annotated with the set of IDs that are allowed to act
 as primary keys for instances of each class.
@@ -2167,18 +2169,18 @@ The underlying yaml looks like this:
 
 The full URLs for each is in the jsonld context file
 
-### IDs minted for use within NMDC
+## IDs minted for use within NMDC
 
 Note that NMDC schema mandates IDs for most objects. These always have
 the field name
 [id](https://microbiomedata.github.io/nmdc-metadata/docs/id)
 
-### Reuse vs minting new IDs
+## Reuse vs minting new IDs
 
 We try to reuse IDs as far as possible. For example, for any sample
 already in GOLD, we use the GOLD sample identifier, e.g. GOLD:Gb.....
 
-### IDs generated during workflows
+## IDs generated during workflows
 
 This section is in progress. See
 <https://github.com/microbiomedata/nmdc-metadata/issues/195>
@@ -2285,7 +2287,7 @@ is the official prefix according to KEGG and identifiers.org
 We will also later need a policy for IDs for the sequences in col1 (ie
 genome or transcript), please return later for more details...
 
-### MIxS term identifiers
+## MIxS term identifiers
 
 We are working with the GSC to provide permanent IDs for MIxS terms.
 Note these terms are schema-level rather than data-level.
@@ -2296,11 +2298,11 @@ For now we place these in the nmdc namespaces, e.g
 
 `nmdc:alt`
 
-### Identifier mapping
+## Identifier mapping
 
 Please check this section later
 
-### Identifiers and semantic web URIs
+## Identifiers and semantic web URIs
 
 We produce a JSON-LD context with the schema:
 
@@ -2309,7 +2311,7 @@ We produce a JSON-LD context with the schema:
 When this is combined with schema-conformant JSON, RDF can be
 automatically created using the intended URIs
 
-## Validating json objects against the NMDC schema
+# Validating json objects against the NMDC schema
 
 This document assumes knowledge of
 [JSON](https://www.json.org/json-en.html). It also assumes rudimentary
@@ -2321,7 +2323,7 @@ We can conceive of validation of a piece of JSON at two levels
 1.  The JSON should be syntactically correct JSON
 2.  The JSON should conform to the NMDC schema
 
-### Syntactically correct JSON
+## Syntactically correct JSON
 
 It is crucial that the JSON is syntactically valid, otherwise it can't
 even be schema-validated.
@@ -2344,7 +2346,7 @@ For Python, there is only one choice:
 
 If you are not using this, you should
 
-### Schema validation
+## Schema validation
 
 The JSON-Schema for NMDC is maintained in this github repo, under
 [jsonschema/nmdc.schema.json](../../jsonschema/nmdc.schema.json)
@@ -2389,7 +2391,7 @@ to be submitted in one file.
 You can also use the jsonschema library to validate directly from within
 your python.
 
-### What to do if your JSON does not validate
+## What to do if your JSON does not validate
 
 There are 3 possibilities:
 
@@ -2414,7 +2416,7 @@ Sometimes the validation can complain about invalid syntax if the
 attribute of an instance object disagrees with the schema's typing (ie:
 you have an integer where a string is expected).
 
-### NMDC Producer SOP
+## NMDC Producer SOP
 
 It is expected that different providers of JSON within the NMDC take
 responsibility for validating their JSON. Aim1 can help with any

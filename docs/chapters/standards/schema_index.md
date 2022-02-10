@@ -1,4 +1,6 @@
-# Overview of the NMDC Data Schema
+---
+title: Overview of the NMDC Data Schema
+---
 
 The NMDC has developed a normalized metadata
 [schema](https://github.com/microbiomedata/nmdc-metadata) (available in
